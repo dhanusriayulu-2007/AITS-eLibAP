@@ -45,6 +45,16 @@
     <div class="loading">Loading…</div>
   </div>
 
+  <!-- Textbooks -->
+  <div class="section-header">
+    <h2>Textbooks (PDF)</h2>
+    <span style="font-size:13px;color:var(--text-mid);">AP SCERT · TS SCERT — official Class 10 textbooks</span>
+  </div>
+
+  <div id="textbooksGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading textbooks…</div>
+  </div>
+
   <!-- Video lessons -->
   <div class="section-header">
     <h2>Video lessons</h2>
@@ -124,6 +134,27 @@
       </div>`)).join('');
   }
 
+  function renderTextbooks(board) {
+    const grid = document.getElementById('textbooksGrid');
+    if (!eduData) return;
+    if (board === 'competitive') { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No textbooks for competitive prep — see resources above.</p>'; return; }
+
+    const boardName = board === 'ap' ? 'AP Board' : board === 'ts' ? 'TS Board' : null;
+    const books = boardName ? eduData.textbooks.filter(t => t.board === boardName) : eduData.textbooks;
+    if (!books.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No textbooks found.</p>'; return; }
+    grid.innerHTML = books.map(t => `
+      <div class="card">
+        <span class="card-badge badge-free">${t.source}</span>
+        <h3>${t.title}</h3>
+        <p style="font-weight:500;margin-bottom:6px;">${t.subject} · ${t.class}</p>
+        <p>${t.description}</p>
+        <div class="card-actions">
+          <a href="${t.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>
+          <a href="${t.readUrl}" target="_blank" class="btn-card-ghost">Read Online</a>
+        </div>
+      </div>`).join('');
+  }
+
   function renderVideos(filter) {
     const grid = document.getElementById('videoGrid');
     const filtered = filter === 'all' ? allVideos : filter === 'Competitive' ? allVideos.filter(v => v.board === 'Competitive') : ['EAMCET','JEE','NEET','NTSE'].includes(filter) ? allVideos.filter(v => v.title.toUpperCase().includes(filter)) : allVideos.filter(v => v.board === filter);
@@ -146,6 +177,7 @@
     document.querySelectorAll('#boardTabs .filter-tab').forEach(t => t.classList.remove('active'));
     e.target.classList.add('active');
     renderStages(e.target.dataset.board);
+    renderTextbooks(e.target.dataset.board);
   });
 
   // Video filter tab clicks
@@ -166,8 +198,12 @@
         t.classList.toggle('active', t.dataset.board === initBoard);
       });
       renderStages(initBoard);
+      renderTextbooks(initBoard);
     })
-    .catch(() => { document.getElementById('stagesGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>'; });
+    .catch(() => {
+      document.getElementById('stagesGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>';
+      document.getElementById('textbooksGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>';
+    });
 
   fetch(`${API}/videos`)
     .then(r => r.json())

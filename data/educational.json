@@ -79,6 +79,129 @@
       ]
     }
   ],
+  "textbooks": [
+    {
+      "id": "tb1",
+      "board": "AP Board",
+      "title": "AP Board Class 10 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 Mathematics textbook (Semester 1), 2024-25 academic year, bilingual Telugu & English medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/10_Maths_SEM-1_textbook_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb2",
+      "board": "AP Board",
+      "title": "AP Board Class 10 Physics",
+      "subject": "Physics",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 Physical Science textbook, 2024-25 academic year.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Physics%20Books/10_Physics_textbook_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb3",
+      "board": "AP Board",
+      "title": "AP Board Class 10 Biology",
+      "subject": "Biology",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 Biology textbook, 2024-25 academic year.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Biology%20Books/10_Biology_Textbook_BM_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb4",
+      "board": "AP Board",
+      "title": "AP Board Class 10 Social Studies (History)",
+      "subject": "Social Studies",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 Social Studies (History) textbook, 2024-25 academic year.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Social%20Books/10_Social_History_textbook_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb5",
+      "board": "AP Board",
+      "title": "AP Board Class 10 English",
+      "subject": "English",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 English textbook, 2024-25 academic year.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/English%20Books/10_English_Textbook_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb6",
+      "board": "AP Board",
+      "title": "AP Board Class 10 Telugu",
+      "subject": "Telugu",
+      "class": "Class 10",
+      "description": "Andhra Pradesh SCERT official Class 10 Telugu textbook, 2024-25 academic year.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Telugu%20Books/10_telugu_textbook_2024-25.pdf/10",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb7",
+      "board": "TS Board",
+      "title": "TS Board Class 10 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 10",
+      "description": "Telangana SCERT official Class 10 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/10%20mathematics%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb8",
+      "board": "TS Board",
+      "title": "TS Board Class 10 Physics",
+      "subject": "Physics",
+      "class": "Class 10",
+      "description": "Telangana SCERT official Class 10 Physical Science textbook (English Medium).",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks2019/10%20physics%20em%20-%2020.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb9",
+      "board": "TS Board",
+      "title": "TS Board Class 10 Social Studies",
+      "subject": "Social Studies",
+      "class": "Class 10",
+      "description": "Telangana SCERT official Class 10 Social Studies textbook, 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/10%20social%20um%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb10",
+      "board": "TS Board",
+      "title": "TS Board Class 10 English",
+      "subject": "English",
+      "class": "Class 10",
+      "description": "Telangana SCERT official Class 10 English textbook, 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/10%20english%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb11",
+      "board": "TS Board",
+      "title": "TS Board Class 10 Telugu",
+      "subject": "Telugu",
+      "class": "Class 10",
+      "description": "Telangana SCERT official Class 10 Telugu (First Language) textbook, 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/10%20telugu%20fl%20final%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    }
+  ],
   "competitive": [
     {
       "id": "ntse",
