@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Events
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Events &amp; community</h1>
+  <p style="color:var(--text-mid);margin-bottom:32px;">Workshops, book clubs, author talks, reading groups and community board — stay connected with your library.</p>
+
+  <div class="filter-tabs" id="eventTabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="WORKSHOP">Workshops</button>
+    <button class="filter-tab" data-filter="BOOK CLUB">Book Clubs</button>
+    <button class="filter-tab" data-filter="PODCAST">Podcast</button>
+    <button class="filter-tab" data-filter="NOTICE">Notices</button>
+  </div>
+
+  <div id="eventsGrid" class="card-grid">
+    <div class="loading">Loading events…</div>
+  </div>
+
+  <!-- Community board -->
+  <div style="margin-top:48px;">
+    <h2 style="font-size:20px;font-weight:bold;margin-bottom:20px;">Community board</h2>
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-badge badge-new">RESOURCES · New this week</span>
+        <h3 style="margin-top:8px;">Inter 2nd year MPC model papers 2026 added</h3>
+        <p>Answer keys and marking schemes now available.</p>
+        <div class="card-actions">
+          <a href="educational.html" class="btn-card-primary">View resources</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-podcast">PODCAST · Community</span>
+        <h3 style="margin-top:8px;">Ask a Librarian — weekly Q&amp;A</h3>
+        <p>Research help and book recommendations. Every Thursday.</p>
+        <div class="card-actions">
+          <a href="#" class="btn-card-primary">Join session</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-notice">NOTICE · From the team</span>
+        <h3 style="margin-top:8px;">Scheduled maintenance — 30 Jun 2026</h3>
+        <p>eLibAP will be down from 2–4 AM IST on 30 June 2026.</p>
+        <div class="card-actions">
+          <span class="btn-card-ghost" style="text-align:center;padding:8px;display:block;">30 Jun 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Ask a Librarian</a><a href="#">FAQ</a><a href="#">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script>
+  const API = 'http://localhost:8080/api';
+  let allEvents = [];
+
+  const badgeMap = { WORKSHOP: 'badge-workshop', 'BOOK CLUB': 'badge-bookclub', PODCAST: 'badge-podcast', NOTICE: 'badge-notice' };
+
+  function renderEvents(filter) {
+    const grid = document.getElementById('eventsGrid');
+    const filtered = filter === 'all' ? allEvents : allEvents.filter(e => e.type === filter);
+    if (!filtered.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No events found.</p>'; return; }
+    grid.innerHTML = filtered.map(ev => `
+      <div class="card">
+        <span class="card-badge ${badgeMap[ev.type] || 'badge-new'}">${ev.type}</span>
+        <p style="font-size:12px;color:var(--text-light);margin:6px 0;">${ev.displayDate} · ${ev.time}</p>
+        <h3>${ev.title}</h3>
+        <p style="margin-top:6px;">${ev.description}</p>
+        <div class="card-actions">
+          <span class="btn-card-primary" style="text-align:center;display:block;cursor:default;">${ev.isFree ? 'Free · ' : ''}${ev.mode}</span>
+        </div>
+      </div>`).join('');
+  }
+
+  document.getElementById('eventTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#eventTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    renderEvents(e.target.dataset.filter);
+  });
+
+  fetch(`${API}/events`)
+    .then(r => r.json())
+    .then(data => { allEvents = data; renderEvents('all'); })
+    .catch(() => { document.getElementById('eventsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load events.</p>'; });
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>

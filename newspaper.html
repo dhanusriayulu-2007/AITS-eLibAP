@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newspaper — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html">Educational</a>
+      <a href="newspaper.html" class="active">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Newspaper &amp; Periodicals
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Newspaper &amp; Periodicals</h1>
+  <p style="color:var(--text-mid);margin-bottom:32px;">Regional dailies, national papers, international news, press archives and magazines — all in one place.</p>
+
+  <div class="filter-tabs" id="newsTabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="Telugu">Telugu</button>
+    <button class="filter-tab" data-filter="English">English</button>
+    <button class="filter-tab" data-filter="Archive">Archives</button>
+  </div>
+
+  <div id="newsGrid" class="card-grid">
+    <div class="loading">Loading newspapers…</div>
+  </div>
+
+  <!-- Press Archives -->
+  <div style="margin-top:48px;">
+    <div class="section-header">
+      <h2>Press archives</h2>
+      <a href="https://archive.org/search?query=andhra+pradesh+newspaper&mediatype=texts" target="_blank">Search Internet Archive →</a>
+    </div>
+    <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:24px;">
+      <p style="color:var(--text-mid);margin-bottom:16px;">Search historical newspapers from 1900–present via Internet Archive.</p>
+      <div style="display:flex;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:600px;">
+        <input id="archiveSearch" type="text" placeholder="Keyword, headline, event, year…"
+          style="flex:1;padding:12px 16px;border:none;outline:none;background:transparent;font-size:14px;color:var(--text-dark);">
+        <button onclick="searchArchive()"
+          style="padding:12px 20px;background:var(--teal-600);color:white;border:none;cursor:pointer;font-size:14px;font-weight:bold;">
+          Search
+        </button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;">
+        <a href="https://archive.org/search?query=andhra+pradesh+newspaper+1947&mediatype=texts" target="_blank" class="btn-card-ghost" style="text-decoration:none;">🗓 1940s — Independence era</a>
+        <a href="https://archive.org/search?query=andhra+pradesh+newspaper+1960&mediatype=texts" target="_blank" class="btn-card-ghost" style="text-decoration:none;">🗓 1960s</a>
+        <a href="https://archive.org/search?query=andhra+pradesh+newspaper+1980&mediatype=texts" target="_blank" class="btn-card-ghost" style="text-decoration:none;">🗓 1980s</a>
+        <a href="https://archive.org/search?query=telangana+newspaper&mediatype=texts" target="_blank" class="btn-card-ghost" style="text-decoration:none;">📰 Telangana</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Magazines -->
+  <div style="margin-top:48px;">
+    <div class="section-header">
+      <h2>Magazines &amp; journals</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-badge badge-new">WEEKLY</span>
+        <h3>Employment News</h3>
+        <p>Jobs, careers &amp; government updates</p>
+        <div class="card-actions">
+          <a href="https://www.employmentnews.gov.in" target="_blank" class="btn-card-primary">Read online</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-new">WEEKLY</span>
+        <h3>Current Affairs Weekly</h3>
+        <p>General knowledge &amp; analysis for competitive exams</p>
+        <div class="card-actions">
+          <a href="https://www.gktoday.in/current-affairs/" target="_blank" class="btn-card-primary">Read online</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-free">OPEN ACCESS</span>
+        <h3>Frontline Magazine</h3>
+        <p>Fortnightly — in-depth national &amp; international news</p>
+        <div class="card-actions">
+          <a href="https://frontline.thehindu.com" target="_blank" class="btn-card-primary">Read online</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-free">OPEN ACCESS</span>
+        <h3>Down To Earth</h3>
+        <p>Environment, science &amp; technology — fortnightly</p>
+        <div class="card-actions">
+          <a href="https://www.downtoearth.org.in" target="_blank" class="btn-card-primary">Read online</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Ask a Librarian</a><a href="#">FAQ</a><a href="#">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script>
+  const API = 'http://localhost:8080/api';
+  let allNews = [];
+
+  function renderNews(filter) {
+    const grid = document.getElementById('newsGrid');
+    const data = filter === 'all' ? allNews : allNews.filter(n => n.language === filter || n.type === 'Archive');
+    const filtered = filter === 'Archive' ? allNews.filter(n => n.type === 'Archive') :
+                     filter === 'all' ? allNews :
+                     allNews.filter(n => n.language === filter && n.type !== 'Archive');
+    if (!filtered.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No results.</p>'; return; }
+    grid.innerHTML = filtered.map(n => `
+      <div class="card">
+        <span class="card-badge ${n.type === 'Archive' ? 'badge-hot' : 'badge-new'}">${n.language} · ${n.type}</span>
+        <h3>${n.name}</h3>
+        <p>${n.city} · Since ${n.since}</p>
+        ${n.pages > 0 ? `<p style="margin-top:4px;">~${n.pages} pages</p>` : ''}
+        <div class="card-actions">
+          <a href="${n.epaperUrl}" target="_blank" class="btn-card-primary">Read e-paper</a>
+        </div>
+      </div>`).join('');
+  }
+
+  function searchArchive() {
+    const q = document.getElementById('archiveSearch').value.trim();
+    if (q) window.open(`https://archive.org/search?query=${encodeURIComponent(q + ' andhra telangana newspaper')}&mediatype=texts`, '_blank');
+  }
+  document.getElementById('archiveSearch').addEventListener('keydown', e => { if (e.key === 'Enter') searchArchive(); });
+
+  document.getElementById('newsTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#newsTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    renderNews(e.target.dataset.filter);
+  });
+
+  fetch(`${API}/newspapers`)
+    .then(r => r.json())
+    .then(data => { allNews = data; renderNews('all'); })
+    .catch(() => { document.getElementById('newsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load newspapers.</p>'; });
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>

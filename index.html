@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eLibAP — Andhra Pradesh & Telangana Digital Library</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Andhra Pradesh &amp; Telangana State Digital Library</h1>
+  <p>Your community library, open 24 hours — textbooks, newspapers, novels, past papers, and video lessons.</p>
+  <div class="search-bar">
+    <input type="text" id="heroSearch" placeholder="Search books, papers, topics, or authors…">
+    <button onclick="doSearch()">Search</button>
+  </div>
+  <div style="margin-top:16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+    <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:13px;cursor:pointer" onclick="setSearch('Class 10 Maths')">Class 10 Maths</span>
+    <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:13px;cursor:pointer" onclick="setSearch('Inter MPC')">Inter MPC</span>
+    <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:13px;cursor:pointer" onclick="setSearch('NTSE prep')">NTSE prep</span>
+    <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:13px;cursor:pointer" onclick="setSearch('Telugu newspapers')">Telugu newspapers</span>
+  </div>
+</section>
+
+<!-- BROWSE BY COLLECTION -->
+<div class="section">
+  <div class="section-header">
+    <h2>Browse by collection</h2>
+    <a href="educational.html">View all →</a>
+  </div>
+  <div class="tile-grid">
+    <a href="educational.html?board=ap" class="tile">
+      <div class="tile-icon">📚</div>
+      <h3>AP Board</h3>
+      <p>KG to Intermediate</p>
+    </a>
+    <a href="educational.html?board=ts" class="tile">
+      <div class="tile-icon">🏫</div>
+      <h3>TS Board</h3>
+      <p>KG to Intermediate</p>
+    </a>
+    <a href="newspaper.html" class="tile">
+      <div class="tile-icon">📰</div>
+      <h3>Newspapers</h3>
+      <p>Regional, national, archives</p>
+    </a>
+    <a href="novels.html" class="tile">
+      <div class="tile-icon">📖</div>
+      <h3>Novels</h3>
+      <p>Fiction, thriller, drama</p>
+    </a>
+    <a href="educational.html?type=competitive" class="tile">
+      <div class="tile-icon">🏆</div>
+      <h3>Competitive prep</h3>
+      <p>NTSE, Olympiads, NMMS</p>
+    </a>
+    <a href="educational.html?type=papers" class="tile">
+      <div class="tile-icon">📝</div>
+      <h3>Previous Papers</h3>
+      <p>AP & TS Board, 2010–2025</p>
+    </a>
+  </div>
+</div>
+
+<!-- VIDEO LESSONS -->
+<div style="background:white; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-header">
+      <h2>Audio &amp; video lessons</h2>
+      <a href="educational.html">View all →</a>
+    </div>
+    <div id="videoGrid" class="card-grid">
+      <div class="loading">Loading videos…</div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<div class="section">
+  <div class="section-header">
+    <h2>What's happening</h2>
+    <a href="events.html">All events →</a>
+  </div>
+  <div id="eventsGrid" class="card-grid">
+    <div class="loading">Loading events…</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:linear-gradient(135deg,var(--teal-600),var(--teal-800));color:white;text-align:center;padding:48px 24px;">
+  <h2 style="font-size:26px;margin-bottom:8px;">Ready to start reading?</h2>
+  <p style="opacity:0.9;margin-bottom:24px;">Free registration gives you full access — no subscription fees, no hidden charges.</p>
+  <div style="display:flex;gap:12px;justify-content:center;">
+    <a href="#" class="btn-ghost" style="background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3);">Learn more</a>
+    <a href="#" onclick="openSignup();return false;" class="btn-primary" style="background:var(--amber-400);color:var(--text-dark);">Create account</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>eLibAP</h4>
+        <a href="#">About us</a>
+        <a href="#">Mission</a>
+        <a href="#">AITS Tirupati</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="educational.html">Educational</a>
+        <a href="newspaper.html">Newspapers</a>
+        <a href="novels.html">Novels</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Ask a Librarian</a>
+        <a href="#">FAQ</a>
+        <a href="#">Technical support</a>
+        <a href="#">ILL Loans</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library · AITS Community Project</div>
+  </div>
+</footer>
+
+<script>
+  const API = 'http://localhost:8080/api';
+
+  function setSearch(val) {
+    document.getElementById('heroSearch').value = val;
+  }
+  function doSearch() {
+    const q = document.getElementById('heroSearch').value.trim();
+    if (q) window.location.href = `novels.html?q=${encodeURIComponent(q)}`;
+  }
+  document.getElementById('heroSearch').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+
+  // Load videos (show first 4)
+  fetch(`${API}/videos`)
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('videoGrid');
+      grid.innerHTML = '';
+      data.slice(0, 4).forEach(v => {
+        grid.innerHTML += `
+          <div class="card">
+            <span class="card-badge badge-free">VIDEO</span>
+            <div class="video-wrapper" style="margin-bottom:12px;">
+              <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>${v.title}</h3>
+            <p>${v.board} · ${v.class} · ${v.subject}</p>
+            <p style="margin-top:4px;">${v.duration}</p>
+            <div class="card-actions" style="margin-top:10px;">
+              <a href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" class="btn-card-ghost" style="text-decoration:none;font-size:12px;">▶ YouTube</a>
+              <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(v.teluguSearch||v.title+' Telugu')}" target="_blank" class="btn-card-primary" style="font-size:12px;text-decoration:none;">🔍 Telugu</a>
+            </div>
+          </div>`;
+      });
+    })
+    .catch(() => {
+      document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load videos. See README.</p>';
+    });
+
+  // Load events (show first 3)
+  fetch(`${API}/events`)
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('eventsGrid');
+      grid.innerHTML = '';
+      data.slice(0, 3).forEach(ev => {
+        const badgeClass = { WORKSHOP: 'badge-workshop', 'BOOK CLUB': 'badge-bookclub', PODCAST: 'badge-podcast', NOTICE: 'badge-notice' }[ev.type] || 'badge-new';
+        grid.innerHTML += `
+          <div class="card">
+            <span class="card-badge ${badgeClass}">${ev.type}</span>
+            <p style="font-size:12px;color:var(--text-light);margin-bottom:6px;">${ev.displayDate} · ${ev.time}</p>
+            <h3>${ev.title}</h3>
+            <p style="margin-top:6px;">${ev.description}</p>
+            <div class="card-actions">
+              <a href="events.html" class="btn-card-primary">${ev.isFree ? 'Free · ' : ''}${ev.mode}</a>
+            </div>
+          </div>`;
+      });
+    })
+    .catch(() => {
+      document.getElementById('eventsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load events.</p>';
+    });
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "boards": [
+    {
+      "id": "ap",
+      "name": "AP Board",
+      "fullName": "Andhra Pradesh Board of Secondary Education",
+      "stages": [
+        {
+          "id": "kg",
+          "name": "Kindergarten",
+          "description": "Story books, alphabet and number workbooks",
+          "ageGroup": "Ages 3–6",
+          "resourceCount": 12,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=AP&gradeLevel=KG"
+        },
+        {
+          "id": "primary",
+          "name": "Primary 1–5",
+          "description": "Textbooks, worksheets and audio lessons",
+          "ageGroup": "Classes 1–5",
+          "resourceCount": 84,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=AP&gradeLevel=Class%201,Class%202,Class%203,Class%204,Class%205"
+        },
+        {
+          "id": "secondary",
+          "name": "Secondary 6–10",
+          "description": "Study notes, past papers and video lessons",
+          "ageGroup": "Classes 6–10",
+          "resourceCount": 210,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=AP&gradeLevel=Class%206,Class%207,Class%208,Class%209,Class%2010"
+        },
+        {
+          "id": "intermediate",
+          "name": "Intermediate 11–12",
+          "description": "MPC, BiPC, CEC, HEC notes and papers",
+          "ageGroup": "Classes 11–12",
+          "resourceCount": 320,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=AP&gradeLevel=Class%2011,Class%2012"
+        }
+      ]
+    },
+    {
+      "id": "ts",
+      "name": "TS Board",
+      "fullName": "Telangana Board of Secondary Education",
+      "stages": [
+        {
+          "id": "kg",
+          "name": "Kindergarten",
+          "description": "Story books, alphabet and number workbooks",
+          "ageGroup": "Ages 3–6",
+          "resourceCount": 10,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=TS&gradeLevel=KG"
+        },
+        {
+          "id": "primary",
+          "name": "Primary 1–5",
+          "description": "Textbooks, worksheets and audio lessons",
+          "ageGroup": "Classes 1–5",
+          "resourceCount": 76,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=TS&gradeLevel=Class%201,Class%202,Class%203,Class%204,Class%205"
+        },
+        {
+          "id": "secondary",
+          "name": "Secondary 6–10",
+          "description": "Study notes, past papers and video lessons",
+          "ageGroup": "Classes 6–10",
+          "resourceCount": 195,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=TS&gradeLevel=Class%206,Class%207,Class%208,Class%209,Class%2010"
+        },
+        {
+          "id": "intermediate",
+          "name": "Intermediate 11–12",
+          "description": "MPC, BiPC, CEC, HEC notes and papers",
+          "ageGroup": "Classes 11–12",
+          "resourceCount": 290,
+          "dikshaUrl": "https://diksha.gov.in/explore?board=TS&gradeLevel=Class%2011,Class%2012"
+        }
+      ]
+    }
+  ],
+  "competitive": [
+    {
+      "id": "ntse",
+      "name": "NTSE",
+      "description": "National Talent Search Examination — Class 10",
+      "resourceUrl": "https://diksha.gov.in/explore?key=ntse",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=NTSE+preparation+Telugu"
+    },
+    {
+      "id": "olympiad",
+      "name": "Science Olympiad",
+      "description": "National Science Olympiad preparation materials",
+      "resourceUrl": "https://diksha.gov.in/explore?key=olympiad",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=Science+Olympiad+Telugu"
+    },
+    {
+      "id": "nmms",
+      "name": "NMMS",
+      "description": "National Means-cum-Merit Scholarship — Class 8",
+      "resourceUrl": "https://diksha.gov.in/explore?key=nmms",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=NMMS+scholarship+Telugu"
+    }
+  ]
+}

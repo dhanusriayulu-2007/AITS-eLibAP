@@ -1,0 +1,90 @@
+[
+  {
+    "id": "n1",
+    "name": "Eenadu",
+    "language": "Telugu",
+    "city": "Hyderabad",
+    "since": "1974",
+    "type": "Regional daily",
+    "epaperUrl": "https://epaper.eenadu.net",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Eenadu-logo.svg/200px-Eenadu-logo.svg.png",
+    "pages": 42
+  },
+  {
+    "id": "n2",
+    "name": "Sakshi",
+    "language": "Telugu",
+    "city": "Hyderabad",
+    "since": "2008",
+    "type": "Regional daily",
+    "epaperUrl": "https://epaper.sakshi.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sakshi_logo.svg/200px-Sakshi_logo.svg.png",
+    "pages": 36
+  },
+  {
+    "id": "n3",
+    "name": "Andhra Jyothi",
+    "language": "Telugu",
+    "city": "Vijayawada",
+    "since": "1960",
+    "type": "Regional daily",
+    "epaperUrl": "https://epaper.andhrajyothy.com",
+    "logo": "",
+    "pages": 40
+  },
+  {
+    "id": "n4",
+    "name": "Deccan Chronicle",
+    "language": "English",
+    "city": "Hyderabad",
+    "since": "1938",
+    "type": "National daily",
+    "epaperUrl": "https://epaper.deccanchronicle.com",
+    "logo": "",
+    "pages": 28
+  },
+  {
+    "id": "n5",
+    "name": "The Hindu",
+    "language": "English",
+    "city": "Chennai",
+    "since": "1878",
+    "type": "National daily",
+    "epaperUrl": "https://epaper.thehindu.com",
+    "logo": "",
+    "pages": 20
+  },
+  {
+    "id": "n6",
+    "name": "Hans India",
+    "language": "English",
+    "city": "Hyderabad",
+    "since": "2011",
+    "type": "Regional daily",
+    "epaperUrl": "https://www.thehansindia.com",
+    "logo": "",
+    "pages": 24
+  },
+  {
+    "id": "n7",
+    "name": "Vaartha",
+    "language": "Telugu",
+    "city": "Hyderabad",
+    "since": "1991",
+    "type": "Regional daily",
+    "epaperUrl": "https://www.vaartha.com",
+    "logo": "",
+    "pages": 16
+  },
+  {
+    "id": "archive1",
+    "name": "AP Press Archive (Internet Archive)",
+    "language": "Multiple",
+    "city": "Andhra Pradesh",
+    "since": "1900",
+    "type": "Archive",
+    "epaperUrl": "https://archive.org/search?query=andhra+pradesh+newspaper&mediatype=texts",
+    "logo": "",
+    "pages": 0
+  }
+]

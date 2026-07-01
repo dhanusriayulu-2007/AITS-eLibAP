@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novels — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html" class="active">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Novels
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Novels &amp; fiction</h1>
+  <p style="color:var(--text-mid);margin-bottom:24px;">Fiction, historical, thriller, drama, comedy — Telugu, English and Hindi. Links to Open Library and Internet Archive.</p>
+
+  <!-- Search -->
+  <div style="display:flex;gap:0;background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:500px;margin-bottom:24px;">
+    <input id="bookSearch" type="text" placeholder="Search by title, author, genre…"
+      style="flex:1;padding:11px 16px;border:none;outline:none;font-size:14px;color:var(--text-dark);">
+    <button onclick="filterBooks()"
+      style="padding:11px 18px;background:var(--teal-600);color:white;border:none;cursor:pointer;font-size:14px;">
+      Search
+    </button>
+  </div>
+
+  <div class="filter-tabs" id="bookTabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="NCERT">NCERT Textbooks</button>
+    <button class="filter-tab" data-filter="Telugu">Telugu</button>
+    <button class="filter-tab" data-filter="English">English Novels</button>
+    <button class="filter-tab" data-filter="Archive">Archive.org</button>
+  </div>
+
+  <div id="bookGrid" class="card-grid">
+    <div class="loading">Loading books…</div>
+  </div>
+
+  <!-- Open Library search -->
+  <div style="margin-top:48px;background:white;border:1px solid var(--border);border-radius:10px;padding:28px;">
+    <h2 style="font-size:18px;font-weight:bold;margin-bottom:8px;">Search Open Library</h2>
+    <p style="color:var(--text-mid);font-size:13px;margin-bottom:16px;">Access millions of free books from Open Library (openlibrary.org) and Internet Archive.</p>
+    <div style="display:flex;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:600px;">
+      <input id="olSearch" type="text" placeholder="Search any book or author…"
+        style="flex:1;padding:12px 16px;border:none;outline:none;background:transparent;font-size:14px;color:var(--text-dark);">
+      <button onclick="searchOpenLibrary()"
+        style="padding:12px 20px;background:var(--teal-600);color:white;border:none;cursor:pointer;font-size:14px;font-weight:bold;">
+        Search
+      </button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;">
+      <a href="https://openlibrary.org/subjects/telugu_fiction" target="_blank" class="btn-card-ghost" style="text-decoration:none;">Telugu Fiction</a>
+      <a href="https://openlibrary.org/subjects/indian_literature" target="_blank" class="btn-card-ghost" style="text-decoration:none;">Indian Literature</a>
+      <a href="https://archive.org/search?query=telugu+novel&mediatype=texts" target="_blank" class="btn-card-ghost" style="text-decoration:none;">Telugu on Archive.org</a>
+      <a href="https://openlibrary.org/subjects/hindi_fiction" target="_blank" class="btn-card-ghost" style="text-decoration:none;">Hindi Fiction</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Ask a Librarian</a><a href="#">FAQ</a><a href="#">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script>
+  const API = 'http://localhost:8080/api';
+  let allBooks = [];
+  let activeFilter = 'all';
+
+  function renderBooks(books) {
+    const grid = document.getElementById('bookGrid');
+    if (!books.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No books found.</p>'; return; }
+    grid.innerHTML = books.map(b => `
+      <div class="card">
+        <span class="card-badge badge-free">${b.source || b.language} · ${b.genre}</span>
+        ${b.award ? `<span class="card-badge badge-hot" style="margin-left:4px;">${b.award}</span>` : ''}
+        <h3 style="margin-top:8px;">${b.title}</h3>
+        <p style="font-weight:500;margin-bottom:6px;">${b.author} · ${b.year}</p>
+        <p>${b.description}</p>
+        <div class="card-actions">
+          ${b.pdfUrl ? `<a href="${b.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
+          <a href="${b.readUrl}" target="_blank" class="btn-card-ghost">Read Online</a>
+        </div>
+      </div>`).join('');
+  }
+
+  function filterBooks() {
+    const q = document.getElementById('bookSearch').value.toLowerCase();
+    let filtered = activeFilter === 'all' ? allBooks : allBooks.filter(b => b.language === activeFilter);
+    if (q) filtered = filtered.filter(b => b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q) || b.genre.toLowerCase().includes(q));
+    renderBooks(filtered);
+  }
+
+  function searchOpenLibrary() {
+    const q = document.getElementById('olSearch').value.trim();
+    if (q) window.open(`https://openlibrary.org/search?q=${encodeURIComponent(q)}`, '_blank');
+  }
+  document.getElementById('olSearch').addEventListener('keydown', e => { if (e.key === 'Enter') searchOpenLibrary(); });
+  document.getElementById('bookSearch').addEventListener('keyup', filterBooks);
+
+  document.getElementById('bookTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#bookTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    activeFilter = e.target.dataset.filter;
+    filterBooks();
+  });
+
+  // Pre-fill search from URL param
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('q')) document.getElementById('bookSearch').value = params.get('q');
+
+  fetch(`${API}/books`)
+    .then(r => r.json())
+    .then(data => { allBooks = data; filterBooks(); })
+    .catch(() => { document.getElementById('bookGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load books.</p>'; });
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>

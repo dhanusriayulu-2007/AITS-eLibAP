@@ -1,0 +1,62 @@
+[
+  {
+    "id": "e1",
+    "type": "WORKSHOP",
+    "title": "How to crack NTSE 2026 — free strategy session",
+    "description": "Expert-led section-wise prep, time management and last-mile revision for NTSE aspirants.",
+    "date": "2026-07-05",
+    "displayDate": "5 Jul 2026",
+    "time": "10:00 AM – 12:00 PM IST",
+    "mode": "Online",
+    "isFree": true,
+    "link": ""
+  },
+  {
+    "id": "e2",
+    "type": "BOOK CLUB",
+    "title": "Telugu classics reading circle — July edition",
+    "description": "Viswanatha Satyanarayana's Veyi Padagalu. All levels welcome, open discussion.",
+    "date": "2026-07-12",
+    "displayDate": "12 Jul 2026",
+    "time": "10:00 AM IST",
+    "mode": "Online",
+    "isFree": true,
+    "link": ""
+  },
+  {
+    "id": "e3",
+    "type": "WORKSHOP",
+    "title": "Inter board exam preparation — Maths & Science",
+    "description": "Tips and strategies for Class 11–12 AP & TS Board students. Covers MPC and BiPC streams.",
+    "date": "2026-07-19",
+    "displayDate": "19 Jul 2026",
+    "time": "11:00 AM – 1:00 PM IST",
+    "mode": "Online",
+    "isFree": true,
+    "link": ""
+  },
+  {
+    "id": "e4",
+    "type": "PODCAST",
+    "title": "Ask a Librarian — live Q&A every Friday",
+    "description": "Research help, book recommendations, ILL requests. Join the weekly live session.",
+    "date": "2026-06-27",
+    "displayDate": "Every Friday",
+    "time": "4:00 PM IST",
+    "mode": "Online",
+    "isFree": true,
+    "link": ""
+  },
+  {
+    "id": "e5",
+    "type": "NOTICE",
+    "title": "Scheduled maintenance — 30 June 2026",
+    "description": "eLibAP will be down for scheduled maintenance on 30 June 2026 from 2–4 AM IST.",
+    "date": "2026-06-30",
+    "displayDate": "30 Jun 2026",
+    "time": "2:00 AM – 4:00 AM IST",
+    "mode": "N/A",
+    "isFree": true,
+    "link": ""
+  }
+]

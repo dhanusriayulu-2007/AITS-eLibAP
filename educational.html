@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html" class="active">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Educational
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Educational resources</h1>
+  <p style="color:var(--text-mid);margin-bottom:32px;">AP Board and TS Board — KG to Intermediate. Textbooks, past papers, video lessons, homework help and competitive prep.</p>
+
+  <!-- Board tabs -->
+  <div class="filter-tabs" id="boardTabs">
+    <button class="filter-tab active" data-board="all">All Boards</button>
+    <button class="filter-tab" data-board="ap">AP Board</button>
+    <button class="filter-tab" data-board="ts">TS Board</button>
+    <button class="filter-tab" data-board="competitive">Competitive Prep</button>
+  </div>
+
+  <!-- Board stages -->
+  <div id="stagesGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading…</div>
+  </div>
+
+  <!-- Video lessons -->
+  <div class="section-header">
+    <h2>Video lessons</h2>
+    <span style="font-size:13px;color:var(--text-mid);">Powered by YouTube · DIKSHA</span>
+  </div>
+
+  <div class="filter-tabs" id="videoTabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="AP Board">AP Board</button>
+    <button class="filter-tab" data-filter="TS Board">TS Board</button>
+    <button class="filter-tab" data-filter="Competitive">All Competitive</button>
+    <button class="filter-tab" data-filter="EAMCET">EAMCET</button>
+    <button class="filter-tab" data-filter="JEE">JEE Mains</button>
+    <button class="filter-tab" data-filter="NEET">NEET</button>
+    <button class="filter-tab" data-filter="NTSE">NTSE</button>
+  </div>
+
+  <div id="videoGrid" class="card-grid">
+    <div class="loading">Loading videos…</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--teal-600);color:white;text-align:center;padding:40px 24px;">
+  <h2 style="font-size:22px;margin-bottom:8px;">Ready to start learning?</h2>
+  <p style="opacity:0.9;margin-bottom:20px;">Free registration — no subscription fees, no hidden charges.</p>
+  <a href="#" onclick="openSignup();return false;" class="btn-primary" style="background:var(--amber-400);color:var(--text-dark);">Create account</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Ask a Librarian</a><a href="#">FAQ</a><a href="#">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script>
+  const API = 'http://localhost:8080/api';
+  let allVideos = [];
+  let eduData = null;
+
+  const params = new URLSearchParams(window.location.search);
+  const initBoard = params.get('board') || 'all';
+
+  function renderStages(board) {
+    const grid = document.getElementById('stagesGrid');
+    if (!eduData) { grid.innerHTML = '<p style="color:var(--text-mid)">Failed to load data. Is the server running?</p>'; return; }
+
+    if (board === 'competitive') {
+      grid.innerHTML = eduData.competitive.map(c => `
+        <div class="card">
+          <span class="card-badge badge-hot">COMPETITIVE</span>
+          <h3>${c.name}</h3>
+          <p>${c.description}</p>
+          <div class="card-actions">
+            <a href="${c.dikshaUrl || c.resourceUrl}" target="_blank" class="btn-card-primary">DIKSHA Resources</a>
+            <a href="${c.youtubePlaylist}" target="_blank" class="btn-card-ghost">YouTube</a>
+          </div>
+        </div>`).join('');
+      return;
+    }
+
+    let boards = board === 'all' ? eduData.boards : eduData.boards.filter(b => b.id === board);
+    grid.innerHTML = boards.flatMap(b => b.stages.map(s => `
+      <div class="card">
+        <span class="card-badge badge-free">${b.name}</span>
+        <h3>${s.name}</h3>
+        <p>${s.description}</p>
+        <p style="margin-top:4px;">${s.ageGroup} · ${s.resourceCount} resources</p>
+        <div class="card-actions">
+          <a href="${s.dikshaUrl}" target="_blank" class="btn-card-primary">Open in DIKSHA</a>
+        </div>
+      </div>`)).join('');
+  }
+
+  function renderVideos(filter) {
+    const grid = document.getElementById('videoGrid');
+    const filtered = filter === 'all' ? allVideos : filter === 'Competitive' ? allVideos.filter(v => v.board === 'Competitive') : ['EAMCET','JEE','NEET','NTSE'].includes(filter) ? allVideos.filter(v => v.title.toUpperCase().includes(filter)) : allVideos.filter(v => v.board === filter);
+    if (!filtered.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No videos found.</p>'; return; }
+    grid.innerHTML = filtered.map(v => `
+      <div class="card">
+        <span class="card-badge badge-free">VIDEO</span>
+        <div class="video-wrapper" style="margin-bottom:12px;">
+          <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <h3>${v.title}</h3>
+        <p>${v.board} · ${v.class} · ${v.subject}</p>
+        <p style="margin-top:4px;">${v.chapter} · ${v.duration} · ${v.language}</p>
+      </div>`).join('');
+  }
+
+  // Board tab clicks
+  document.getElementById('boardTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#boardTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    renderStages(e.target.dataset.board);
+  });
+
+  // Video filter tab clicks
+  document.getElementById('videoTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#videoTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    renderVideos(e.target.dataset.filter);
+  });
+
+  // Load data
+  fetch(`${API}/educational`)
+    .then(r => r.json())
+    .then(data => {
+      eduData = data;
+      // Activate initial board tab
+      document.querySelectorAll('#boardTabs .filter-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.board === initBoard);
+      });
+      renderStages(initBoard);
+    })
+    .catch(() => { document.getElementById('stagesGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>'; });
+
+  fetch(`${API}/videos`)
+    .then(r => r.json())
+    .then(data => { allVideos = data; renderVideos('all'); })
+    .catch(() => { document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load videos.</p>'; });
+</script>
+<script src="js/auth.js"></script>
+</body>
+</html>
