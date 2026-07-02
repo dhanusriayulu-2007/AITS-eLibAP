@@ -1,5 +1,53 @@
 [
   {
+    "id": "v24",
+    "title": "Telugu Aksharaalu — Learn Telugu Alphabets For Kids (Kindergarten)",
+    "board": "AP Board",
+    "class": "KG",
+    "subject": "Telugu",
+    "chapter": "Telugu Aksharamala",
+    "youtubeId": "K23gZRDml8I",
+    "duration": "12 min",
+    "language": "Telugu",
+    "teluguSearch": "Telugu aksharaalu kids kindergarten"
+  },
+  {
+    "id": "v25",
+    "title": "Numbers Song 1–20 — Telugu Rhymes for Children (Kindergarten)",
+    "board": "AP Board",
+    "class": "KG",
+    "subject": "Mathematics",
+    "chapter": "Numbers 1-20",
+    "youtubeId": "a3N1d68YOVU",
+    "duration": "8 min",
+    "language": "Telugu",
+    "teluguSearch": "Telugu numbers 1 to 20 kids"
+  },
+  {
+    "id": "v26",
+    "title": "Telugu Aksharaalu — Learn Telugu Alphabets For Kids (Kindergarten)",
+    "board": "TS Board",
+    "class": "KG",
+    "subject": "Telugu",
+    "chapter": "Telugu Aksharamala",
+    "youtubeId": "K23gZRDml8I",
+    "duration": "12 min",
+    "language": "Telugu",
+    "teluguSearch": "Telugu aksharaalu kids kindergarten"
+  },
+  {
+    "id": "v27",
+    "title": "Numbers Song 1–20 — Telugu Rhymes for Children (Kindergarten)",
+    "board": "TS Board",
+    "class": "KG",
+    "subject": "Mathematics",
+    "chapter": "Numbers 1-20",
+    "youtubeId": "a3N1d68YOVU",
+    "duration": "8 min",
+    "language": "Telugu",
+    "teluguSearch": "Telugu numbers 1 to 20 kids"
+  },
+  {
     "id": "v1",
     "title": "Class 1 & 2 \u2014 Telugu Words Lesson (AP Board)",
     "board": "AP Board",
@@ -22,6 +70,42 @@
     "duration": "15 min",
     "language": "Telugu",
     "teluguSearch": "3rd class maths Telugu AP board"
+  },
+  {
+    "id": "v28",
+    "title": "Class 6 \u2014 Knowing Our Numbers (Maths Telugu Medium, TS Board)",
+    "board": "TS Board",
+    "class": "Class 6",
+    "subject": "Mathematics",
+    "chapter": "Knowing Our Numbers",
+    "youtubeId": "QZaSqmcNrRo",
+    "duration": "15 min",
+    "language": "Telugu",
+    "teluguSearch": "6th class maths knowing our numbers Telugu TS board"
+  },
+  {
+    "id": "v29",
+    "title": "Class 7 \u2014 Integers (Maths Telugu Medium, TS Board)",
+    "board": "TS Board",
+    "class": "Class 7",
+    "subject": "Mathematics",
+    "chapter": "Integers",
+    "youtubeId": "O_4gxwcX6yY",
+    "duration": "18 min",
+    "language": "Telugu",
+    "teluguSearch": "7th class maths integers Telugu TS board"
+  },
+  {
+    "id": "v30",
+    "title": "Class 8 \u2014 What is Science? (Biology Telugu Medium, TS Board)",
+    "board": "TS Board",
+    "class": "Class 8",
+    "subject": "Biology",
+    "chapter": "What is Science?",
+    "youtubeId": "wfKOqxupM80",
+    "duration": "14 min",
+    "language": "Telugu",
+    "teluguSearch": "8th class biology what is science Telugu TS board"
   },
   {
     "id": "v3",

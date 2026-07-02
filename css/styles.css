@@ -249,6 +249,8 @@ footer {
   cursor: pointer;
   color: var(--text-mid);
   font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.15s;
 }
 .filter-tab.active, .filter-tab:hover {

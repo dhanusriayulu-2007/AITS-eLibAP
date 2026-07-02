@@ -81,6 +81,248 @@
   ],
   "textbooks": [
     {
+      "id": "tb-kg1",
+      "board": "AP Board",
+      "title": "Vidya Pravesh — School Preparation Module",
+      "subject": "Foundational Literacy & Numeracy",
+      "class": "KG",
+      "description": "NCERT's official three-month play-based school preparation module — alphabets, sounds, words, colours, shapes and numbers for pre-primary/KG learners, part of the NIPUN Bharat mission.",
+      "pdfUrl": "https://ncert.nic.in/pdf/vidyapravesh.pdf",
+      "readUrl": "https://ncert.nic.in/",
+      "source": "NCERT"
+    },
+    {
+      "id": "tb-kg2",
+      "board": "AP Board",
+      "title": "NIPUN Bharat — FLN Guidelines",
+      "subject": "Foundational Literacy & Numeracy",
+      "class": "KG",
+      "description": "Official Government of India NIPUN Bharat mission guidelines for Foundational Literacy and Numeracy (ages 3–9), hosted on DIKSHA.",
+      "pdfUrl": "https://diksha.gov.in/assets/docs/nipunbharat.pdf",
+      "readUrl": "https://diksha.gov.in/fln.html",
+      "source": "DIKSHA / NIPUN Bharat"
+    },
+    {
+      "id": "tb-kg3",
+      "board": "TS Board",
+      "title": "Vidya Pravesh — School Preparation Module",
+      "subject": "Foundational Literacy & Numeracy",
+      "class": "KG",
+      "description": "NCERT's official three-month play-based school preparation module — alphabets, sounds, words, colours, shapes and numbers for pre-primary/KG learners, part of the NIPUN Bharat mission.",
+      "pdfUrl": "https://ncert.nic.in/pdf/vidyapravesh.pdf",
+      "readUrl": "https://ncert.nic.in/",
+      "source": "NCERT"
+    },
+    {
+      "id": "tb-kg4",
+      "board": "TS Board",
+      "title": "NIPUN Bharat — FLN Guidelines",
+      "subject": "Foundational Literacy & Numeracy",
+      "class": "KG",
+      "description": "Official Government of India NIPUN Bharat mission guidelines for Foundational Literacy and Numeracy (ages 3–9), hosted on DIKSHA.",
+      "pdfUrl": "https://diksha.gov.in/assets/docs/nipunbharat.pdf",
+      "readUrl": "https://diksha.gov.in/fln.html",
+      "source": "DIKSHA / NIPUN Bharat"
+    },
+    {
+      "id": "tb-s6",
+      "board": "AP Board",
+      "title": "AP Board Class 6 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 6",
+      "description": "Andhra Pradesh SCERT official Class 6 Mathematics textbook (Semester 1), 2024-25 academic year, bilingual Telugu & English medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/6_Maths_SEM-1_Textbook.pdf/6",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-s7",
+      "board": "AP Board",
+      "title": "AP Board Class 7 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 7",
+      "description": "Andhra Pradesh SCERT official Class 7 Mathematics textbook (Semester 1), 2024-25 academic year, bilingual Telugu & English medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/7_Maths_SEM-1_Textbook.pdf/7",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-s8",
+      "board": "AP Board",
+      "title": "AP Board Class 8 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 8",
+      "description": "AP SCERT has not published a working direct Class 8 Mathematics PDF at this time — use the official portal to browse available mediums.",
+      "pdfUrl": "",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-s9",
+      "board": "AP Board",
+      "title": "AP Board Class 9 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 9",
+      "description": "Andhra Pradesh SCERT official Class 9 Mathematics textbook (Semester 2), 2024-25 academic year, bilingual Telugu & English medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/9_Maths_SEM-2_Textbook.pdf/9",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-s10",
+      "board": "TS Board",
+      "title": "TS Board Class 6 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 6",
+      "description": "Telangana SCERT official Class 6 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/6%20mathematics%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-s11",
+      "board": "TS Board",
+      "title": "TS Board Class 7 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 7",
+      "description": "Telangana SCERT official Class 7 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/7%20mathematics%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-s12",
+      "board": "TS Board",
+      "title": "TS Board Class 8 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 8",
+      "description": "Telangana SCERT official Class 8 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/8%20mathematics%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-s13",
+      "board": "TS Board",
+      "title": "TS Board Class 9 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 9",
+      "description": "Telangana SCERT official Class 9 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/9%20maths%20em-2024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-p1",
+      "board": "AP Board",
+      "title": "AP Board Class 1 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 1",
+      "description": "Andhra Pradesh SCERT official Class 1 Mathematics textbook, Telugu & English bilingual medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/1_Maths_SEM-1_Textbook.pdf/1",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-p2",
+      "board": "AP Board",
+      "title": "AP Board Class 2 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 2",
+      "description": "Andhra Pradesh SCERT official Class 2 Mathematics textbook, Telugu & English bilingual medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/2_Maths_SEM-1_Textbook.pdf/2",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-p3",
+      "board": "AP Board",
+      "title": "AP Board Class 3 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 3",
+      "description": "AP SCERT has not published a direct Class 3 bilingual PDF at this time — use the official portal to browse available mediums.",
+      "pdfUrl": "",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-p4",
+      "board": "AP Board",
+      "title": "AP Board Class 4 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 4",
+      "description": "Andhra Pradesh SCERT official Class 4 Mathematics textbook, Telugu & English bilingual medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/4_Maths_SEM-1_Textbook.pdf/4",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-p5",
+      "board": "AP Board",
+      "title": "AP Board Class 5 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 5",
+      "description": "Andhra Pradesh SCERT official Class 5 Mathematics textbook, Telugu & English bilingual medium.",
+      "pdfUrl": "https://cse.ap.gov.in/downloadBooks/Maths%20Books/5_Maths_SEM-1_Textbook.pdf/5",
+      "readUrl": "https://cse.ap.gov.in/textBooksDownloadingPageTEBilingual",
+      "source": "AP SCERT"
+    },
+    {
+      "id": "tb-p6",
+      "board": "TS Board",
+      "title": "TS Board Class 1 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 1",
+      "description": "Telangana SCERT official Class 1 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/1st%20class%20maths%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-p7",
+      "board": "TS Board",
+      "title": "TS Board Class 2 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 2",
+      "description": "Telangana SCERT official Class 2 Mathematics textbook (English Medium).",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks2019/2%20maths%20em%202020-21.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-p8",
+      "board": "TS Board",
+      "title": "TS Board Class 3 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 3",
+      "description": "Telangana SCERT official Class 3 Mathematics textbook (Telugu Medium — no English Medium file is published for this class).",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks2019/3%20maths%20tm%202020-21.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-p9",
+      "board": "TS Board",
+      "title": "TS Board Class 4 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 4",
+      "description": "Telangana SCERT official Class 4 Mathematics textbook (English Medium), 2024-25 academic year.",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks/4th%20maths%20em%202024-25.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
+      "id": "tb-p10",
+      "board": "TS Board",
+      "title": "TS Board Class 5 Mathematics",
+      "subject": "Mathematics",
+      "class": "Class 5",
+      "description": "Telangana SCERT official Class 5 Mathematics textbook (English Medium).",
+      "pdfUrl": "https://scert.telangana.gov.in/pdf/publication/ebooks2019/5%20maths%20em%202020-21.pdf",
+      "readUrl": "https://scert.telangana.gov.in/",
+      "source": "TS SCERT"
+    },
+    {
       "id": "tb1",
       "board": "AP Board",
       "title": "AP Board Class 10 Mathematics",
@@ -206,23 +448,58 @@
     {
       "id": "ntse",
       "name": "NTSE",
-      "description": "National Talent Search Examination — Class 10",
+      "description": "National Talent Search Examination — Class 10. No single official PDF syllabus is published (state-conducted) — use the DIKSHA resource hub.",
       "resourceUrl": "https://diksha.gov.in/explore?key=ntse",
+      "pdfUrl": "",
       "youtubePlaylist": "https://www.youtube.com/results?search_query=NTSE+preparation+Telugu"
     },
     {
       "id": "olympiad",
       "name": "Science Olympiad",
-      "description": "National Science Olympiad preparation materials",
-      "resourceUrl": "https://diksha.gov.in/explore?key=olympiad",
+      "description": "Science Olympiad Foundation (SOF) — official International Science Olympiad sample paper, Class 10.",
+      "resourceUrl": "https://sofworld.org/nso/class-10/sample-model-test-papers/nso-sample-papers-class-10",
+      "pdfUrl": "https://sofworld.org/download/file/fid/73698",
       "youtubePlaylist": "https://www.youtube.com/results?search_query=Science+Olympiad+Telugu"
     },
     {
       "id": "nmms",
       "name": "NMMS",
-      "description": "National Means-cum-Merit Scholarship — Class 8",
+      "description": "National Means-cum-Merit Scholarship — Class 8. Syllabus is set by each state SCERT — no single official PDF, use the DIKSHA resource hub.",
       "resourceUrl": "https://diksha.gov.in/explore?key=nmms",
+      "pdfUrl": "",
       "youtubePlaylist": "https://www.youtube.com/results?search_query=NMMS+scholarship+Telugu"
+    },
+    {
+      "id": "eamcet-ap",
+      "name": "AP EAPCET",
+      "description": "Andhra Pradesh Engineering, Agriculture & Pharmacy Common Entrance Test — official 2026 Engineering stream syllabus (APSCHE).",
+      "resourceUrl": "https://cets.apsche.ap.gov.in/EAPCET/",
+      "pdfUrl": "https://cets.apsche.ap.gov.in/EAPCET/PDF/APEAPCET2026_Syllabus_Engineering.pdf",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=AP+EAPCET+preparation+Telugu"
+    },
+    {
+      "id": "eamcet-ts",
+      "name": "TS EAPCET",
+      "description": "Telangana Engineering, Agriculture & Pharmacy Common Entrance Test — official 2026 Engineering stream syllabus (TGCHE).",
+      "resourceUrl": "https://eapcet.tgche.ac.in/",
+      "pdfUrl": "https://eapcet.tgche.ac.in/TGEAPCET/Doc2026/Syllabus-E.pdf",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=TS+EAPCET+preparation+Telugu"
+    },
+    {
+      "id": "jee",
+      "name": "JEE Main",
+      "description": "Joint Entrance Examination (Main) — official NTA 2026 syllabus (Physics, Chemistry, Mathematics).",
+      "resourceUrl": "https://jeemain.nta.nic.in/",
+      "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=JEE+Mains+preparation+Telugu"
+    },
+    {
+      "id": "neet",
+      "name": "NEET",
+      "description": "National Eligibility cum Entrance Test (UG) — official NTA 2026 syllabus (Physics, Chemistry, Biology).",
+      "resourceUrl": "https://neet.nta.nic.in/",
+      "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/20260102588210790.pdf",
+      "youtubePlaylist": "https://www.youtube.com/results?search_query=NEET+preparation+Telugu"
     }
   ]
 }

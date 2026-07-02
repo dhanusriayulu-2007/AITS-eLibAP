@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="help.html" class="active">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Help
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Help &amp; support</h1>
+  <p style="color:var(--text-mid);margin-bottom:32px;">Common questions about using eLibAP, troubleshooting, and how to get in touch.</p>
+
+  <!-- Troubleshooting -->
+  <div class="section-header">
+    <h2>Troubleshooting</h2>
+  </div>
+  <div class="card-grid" style="margin-bottom:48px;">
+    <div class="card">
+      <span class="card-badge badge-hot">COMMON ISSUE</span>
+      <h3>Pages say "Start the Java server"</h3>
+      <p>eLibAP's videos, textbooks, newspapers, books and events are all served by a small Java API on port 8080. If a page shows this message, the server isn't running yet.</p>
+      <p style="margin-top:6px;">From the project folder, run: <code>bash server/run.sh</code> (or compile/run <code>Main.java</code> directly), then reload the page.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge badge-hot">COMMON ISSUE</span>
+      <h3>CORS error in the browser console</h3>
+      <p>This happens when you open an HTML file directly (<code>file://</code>) instead of through a web server.</p>
+      <p style="margin-top:6px;">Serve the site with <code>python3 -m http.server 3000</code> from the project folder and open <code>http://localhost:3000</code> instead.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge badge-hot">COMMON ISSUE</span>
+      <h3>Port 8080 already in use</h3>
+      <p>Another process is already listening on that port. Either stop it, or change the port number in <code>server/Main.java</code> and update the <code>API</code> constant at the top of each page's script.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge badge-hot">COMMON ISSUE</span>
+      <h3>A textbook or video link doesn't open</h3>
+      <p>All PDF/video links point to official third-party sources (AP SCERT, TS SCERT, NCERT, NTA, YouTube, DIKSHA). If a state government site is temporarily down, try again later or use the "Visit Portal" link on that card.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-header">
+    <h2>Frequently asked questions</h2>
+  </div>
+  <div class="card-grid" style="margin-bottom:48px;">
+    <div class="card">
+      <h3>What is eLibAP?</h3>
+      <p>A free digital library for students and communities in Andhra Pradesh and Telangana. It links to open platforms (YouTube, DIKSHA, Open Library, Internet Archive, official government portals) rather than hosting content itself.</p>
+    </div>
+    <div class="card">
+      <h3>Which classes/boards are covered?</h3>
+      <p>AP Board and TS Board, from Kindergarten through Intermediate (11–12), plus competitive exam prep (NTSE, Science Olympiad, NMMS, EAPCET, JEE Main, NEET). See the <a href="educational.html">Educational</a> section and its Kindergarten / Primary / Secondary / Intermediate / Competitive Exams pages.</p>
+    </div>
+    <div class="card">
+      <h3>Do I need to sign up to use the site?</h3>
+      <p>No — all textbooks, videos, newspapers, books and events are free to browse without an account. Signing up (top-right) just saves your name so the site can greet you; it's stored in your browser only, not on a server.</p>
+    </div>
+    <div class="card">
+      <h3>How often is content updated?</h3>
+      <p>Textbook/video/newspaper/book listings are stored in JSON files under <code>data/</code> and read fresh on every request — no caching, no rebuild needed.</p>
+    </div>
+    <div class="card">
+      <h3>I found a broken or outdated link — what do I do?</h3>
+      <p>Use the "Ask a Librarian" contact below and mention the page and item title. Government portals occasionally rename files, and we periodically re-verify links.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section-header">
+    <h2>Still need help?</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-badge badge-free">CONTACT</span>
+      <h3>Ask a Librarian</h3>
+      <p>Have a question about finding a resource, a board/class we don't cover yet, or a broken link? Reach out and we'll help.</p>
+      <div class="card-actions">
+        <a href="mailto:help@elibap.org" class="btn-card-primary">Email help@elibap.org</a>
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-badge badge-free">COMMUNITY</span>
+      <h3>Weekly Q&amp;A</h3>
+      <p>Join the community "Ask a Librarian" session — research help and book recommendations, every Thursday.</p>
+      <div class="card-actions">
+        <a href="events.html" class="btn-card-primary">See on Events page</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--teal-600);color:white;text-align:center;padding:40px 24px;">
+  <h2 style="font-size:22px;margin-bottom:8px;">Ready to start learning?</h2>
+  <p style="opacity:0.9;margin-bottom:20px;">Free registration — no subscription fees, no hidden charges.</p>
+  <a href="#" onclick="openSignup();return false;" class="btn-primary" style="background:var(--amber-400);color:var(--text-dark);">Create account</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="help.html#ask-a-librarian">Ask a Librarian</a><a href="help.html">FAQ</a><a href="help.html">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

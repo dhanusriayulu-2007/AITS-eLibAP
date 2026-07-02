@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secondary (Classes 6–10) — eLibAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a href="educational.html" class="active">Educational</a>
+      <a href="newspaper.html">Newspaper</a>
+      <a href="novels.html">Novels</a>
+      <a href="events.html">Events</a>
+      <a href="help.html">Help</a>
+    </div>
+    <div class="nav-auth">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Sign up free</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section">
+  <p style="font-size:13px;color:var(--text-light);margin-bottom:4px;">
+    <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> /
+    <a href="educational.html" style="color:var(--text-light);text-decoration:none;">Educational</a> / Secondary
+  </p>
+  <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Secondary (Classes 6–10)</h1>
+  <p style="color:var(--text-mid);margin-bottom:24px;">AP Board and TS Board — textbooks, DIKSHA resources and video lessons for Classes 6 to 10.</p>
+
+  <!-- Stage sub-nav -->
+  <div class="filter-tabs">
+    <a href="kindergarten.html" class="filter-tab">Kindergarten</a>
+    <a href="primary.html" class="filter-tab">Primary (1–5)</a>
+    <a href="secondary.html" class="filter-tab active">Secondary (6–10)</a>
+    <a href="intermediate.html" class="filter-tab">Intermediate (11–12)</a>
+    <a href="competitive.html" class="filter-tab">Competitive Exams</a>
+  </div>
+
+  <!-- Board tabs -->
+  <div class="filter-tabs" id="boardTabs">
+    <button class="filter-tab active" data-board="all">All Boards</button>
+    <button class="filter-tab" data-board="ap">AP Board</button>
+    <button class="filter-tab" data-board="ts">TS Board</button>
+  </div>
+
+  <!-- DIKSHA resources -->
+  <div class="section-header">
+    <h2>DIKSHA resources</h2>
+  </div>
+  <div id="dikshaGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading…</div>
+  </div>
+
+  <!-- Textbooks -->
+  <div class="section-header">
+    <h2>Textbooks (PDF)</h2>
+    <span style="font-size:13px;color:var(--text-mid);">AP SCERT · TS SCERT — official Class 10 textbooks</span>
+  </div>
+  <div id="textbooksGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading textbooks…</div>
+  </div>
+
+  <!-- Video lessons -->
+  <div class="section-header">
+    <h2>Video lessons</h2>
+    <span style="font-size:13px;color:var(--text-mid);">Powered by YouTube</span>
+  </div>
+  <div id="videoGrid" class="card-grid">
+    <div class="loading">Loading videos…</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--teal-600);color:white;text-align:center;padding:40px 24px;">
+  <h2 style="font-size:22px;margin-bottom:8px;">Ready to start learning?</h2>
+  <p style="opacity:0.9;margin-bottom:20px;">Free registration — no subscription fees, no hidden charges.</p>
+  <a href="#" onclick="openSignup();return false;" class="btn-primary" style="background:var(--amber-400);color:var(--text-dark);">Create account</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>eLibAP</h4><a href="index.html">Home</a><a href="#">About</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="educational.html">Educational</a><a href="newspaper.html">Newspapers</a><a href="novels.html">Novels</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Ask a Librarian</a><a href="#">FAQ</a><a href="#">ILL Loans</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 eLibAP — Andhra Pradesh &amp; Telangana Digital Library</div>
+  </div>
+</footer>
+
+<script>
+  const STAGE_ID = 'secondary';
+  const STAGE_CLASSES = ['Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10'];
+</script>
+<script src="js/stage-page.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
