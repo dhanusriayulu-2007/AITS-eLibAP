@@ -61,10 +61,28 @@
   <!-- Textbooks -->
   <div class="section-header">
     <h2>Textbooks (PDF)</h2>
-    <span style="font-size:13px;color:var(--text-mid);">AP SCERT · TS SCERT</span>
+    <span style="font-size:13px;color:var(--text-mid);">BIEAP / Telugu Akademi — MPC, BiPC, CEC, HEC</span>
   </div>
+
+  <div class="filter-tabs" id="streamTabs">
+    <button class="filter-tab active" data-stream="all">All Streams</button>
+    <button class="filter-tab" data-stream="MPC">MPC</button>
+    <button class="filter-tab" data-stream="BiPC">BiPC</button>
+    <button class="filter-tab" data-stream="CEC">CEC</button>
+    <button class="filter-tab" data-stream="HEC">HEC</button>
+  </div>
+
   <div id="textbooksGrid" class="card-grid" style="margin-bottom:48px;">
     <div class="loading">Loading textbooks…</div>
+  </div>
+
+  <!-- Previous Year Papers -->
+  <div class="section-header">
+    <h2>Previous Year Papers</h2>
+    <span style="font-size:13px;color:var(--text-mid);">BIEAP does not publish past IPE papers directly — links go to a papers hub</span>
+  </div>
+  <div id="papersGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading papers…</div>
   </div>
 
   <!-- Video lessons -->
@@ -100,6 +118,63 @@
   const STAGE_CLASSES = ['Intermediate'];
 </script>
 <script src="js/stage-page.js"></script>
+<script>
+  // Adds MPC/BiPC/CEC/HEC stream filtering on top of the shared stage-page.js textbook renderer.
+  let currentStream = 'all';
+
+  function renderTextbooks(board) {
+    const grid = document.getElementById('textbooksGrid');
+    if (!eduData) return;
+
+    const boardName = board === 'ap' ? 'AP Board' : board === 'ts' ? 'TS Board' : null;
+    let books = boardName ? eduData.textbooks.filter(t => t.board === boardName) : eduData.textbooks;
+    books = books.filter(t => STAGE_CLASSES.includes(t.class));
+    if (currentStream !== 'all') books = books.filter(t => (t.streams || []).includes(currentStream));
+    if (!books.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No textbooks found.</p>'; return; }
+    grid.innerHTML = books.map(t => `
+      <div class="card">
+        <span class="card-badge badge-free">${(t.streams || []).join(' / ')}</span>
+        <h3>${t.title}</h3>
+        <p style="font-weight:500;margin-bottom:6px;">${t.subject} · ${t.source}</p>
+        <p>${t.description}</p>
+        <div class="card-actions">
+          ${t.pdfUrl ? `<a href="${t.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
+          <a href="${t.readUrl}" target="_blank" class="btn-card-ghost">${t.pdfUrl ? 'Read Online' : 'Visit Portal'}</a>
+        </div>
+      </div>`).join('');
+  }
+
+  function renderPreviousPapers(board) {
+    const grid = document.getElementById('papersGrid');
+    if (!eduData) return;
+
+    const boardName = board === 'ap' ? 'AP Board' : board === 'ts' ? 'TS Board' : null;
+    let papers = eduData.previousPapers.intermediate || [];
+    if (boardName) papers = papers.filter(p => p.board === boardName);
+    if (currentStream !== 'all') papers = papers.filter(p => p.stream === currentStream);
+    if (!papers.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No previous papers found.</p>'; return; }
+    grid.innerHTML = papers.map(p => `
+      <div class="card">
+        <span class="card-badge badge-free">${p.stream}</span>
+        <h3>${p.title}</h3>
+        ${p.description ? `<p>${p.description}</p>` : ''}
+        <div class="card-actions">
+          ${p.pdfUrl ? `<a href="${p.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
+          <a href="${p.readUrl}" target="_blank" class="btn-card-ghost">${p.pdfUrl ? 'Official Site' : 'Visit Portal'}</a>
+        </div>
+      </div>`).join('');
+  }
+
+  document.getElementById('streamTabs').addEventListener('click', e => {
+    if (!e.target.matches('.filter-tab')) return;
+    document.querySelectorAll('#streamTabs .filter-tab').forEach(t => t.classList.remove('active'));
+    e.target.classList.add('active');
+    currentStream = e.target.dataset.stream;
+    const activeBoard = document.querySelector('#boardTabs .filter-tab.active')?.dataset.board || 'all';
+    renderTextbooks(activeBoard);
+    renderPreviousPapers(activeBoard);
+  });
+</script>
 <script src="js/auth.js"></script>
 </body>
 </html>

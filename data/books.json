@@ -115,5 +115,83 @@
     "pdfUrl": "https://www.gutenberg.org/ebooks/1661",
     "readUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
     "source": "Project Gutenberg"
+  },
+  {
+    "id": "b10",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "language": "English",
+    "genre": "Thriller",
+    "subject": "Novel",
+    "class": "General",
+    "description": "Gothic horror-thriller told through letters and diary entries, following Count Dracula's journey from Transylvania to England.",
+    "pdfUrl": "https://www.gutenberg.org/files/345/345-h/345-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/345",
+    "source": "Project Gutenberg"
+  },
+  {
+    "id": "b11",
+    "title": "The Hound of the Baskervilles",
+    "author": "Arthur Conan Doyle",
+    "language": "English",
+    "genre": "Thriller",
+    "subject": "Novel",
+    "class": "General",
+    "description": "Sherlock Holmes investigates a supposed curse and a spectral hound haunting the Baskerville family on the Devon moors.",
+    "pdfUrl": "https://www.gutenberg.org/files/2852/2852-h/2852-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/2852",
+    "source": "Project Gutenberg"
+  },
+  {
+    "id": "b12",
+    "title": "Three Men in a Boat",
+    "author": "Jerome K. Jerome",
+    "language": "English",
+    "genre": "Comedy",
+    "subject": "Novel",
+    "class": "General",
+    "description": "A comic novel following three friends (and a dog) on a hapless boating holiday up the Thames.",
+    "pdfUrl": "https://www.gutenberg.org/files/308/308-h/308-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/308",
+    "source": "Project Gutenberg"
+  },
+  {
+    "id": "b13",
+    "title": "The Importance of Being Earnest",
+    "author": "Oscar Wilde",
+    "language": "English",
+    "genre": "Comedy",
+    "subject": "Play",
+    "class": "General",
+    "description": "A witty comedy of manners about two men who both invent an alter ego named Ernest to escape social obligations.",
+    "pdfUrl": "https://www.gutenberg.org/files/844/844-h/844-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/844",
+    "source": "Project Gutenberg"
+  },
+  {
+    "id": "b14",
+    "title": "Walden",
+    "author": "Henry David Thoreau",
+    "language": "English",
+    "genre": "Nonfiction",
+    "subject": "Philosophy",
+    "class": "General",
+    "description": "Thoreau's reflections on simple living in natural surroundings, based on his two years at Walden Pond.",
+    "pdfUrl": "https://www.gutenberg.org/files/205/205-h/205-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/205",
+    "source": "Project Gutenberg"
+  },
+  {
+    "id": "b15",
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "language": "English",
+    "genre": "Nonfiction",
+    "subject": "Philosophy",
+    "class": "General",
+    "description": "The private philosophical journal of the Roman Emperor, a foundational work of Stoic thought on virtue and self-discipline.",
+    "pdfUrl": "https://www.gutenberg.org/files/2680/2680-h/2680-h.htm",
+    "readUrl": "https://www.gutenberg.org/ebooks/2680",
+    "source": "Project Gutenberg"
   }
 ]

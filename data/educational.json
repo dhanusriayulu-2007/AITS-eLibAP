@@ -323,6 +323,222 @@
       "source": "TS SCERT"
     },
     {
+      "id": "tb-i1",
+      "board": "AP Board",
+      "title": "Intermediate Mathematics — I Year",
+      "subject": "Mathematics",
+      "class": "Intermediate",
+      "streams": ["MPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Mathematics textbook (MPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Maths-_IA.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i2",
+      "board": "AP Board",
+      "title": "Intermediate Mathematics — II Year",
+      "subject": "Mathematics",
+      "class": "Intermediate",
+      "streams": ["MPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Mathematics textbook (MPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Maths-_IIA.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i3",
+      "board": "AP Board",
+      "title": "Intermediate Physics — I Year",
+      "subject": "Physics",
+      "class": "Intermediate",
+      "streams": ["MPC", "BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Physics textbook (MPC & BiPC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/PHYSICS_I_YEAR.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i4",
+      "board": "AP Board",
+      "title": "Intermediate Physics — II Year",
+      "subject": "Physics",
+      "class": "Intermediate",
+      "streams": ["MPC", "BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Physics textbook (MPC & BiPC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Physics-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i5",
+      "board": "AP Board",
+      "title": "Intermediate Chemistry — I Year",
+      "subject": "Chemistry",
+      "class": "Intermediate",
+      "streams": ["MPC", "BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Chemistry textbook (MPC & BiPC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/CHEMISTRY_I_YEAR.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i6",
+      "board": "AP Board",
+      "title": "Intermediate Chemistry — II Year",
+      "subject": "Chemistry",
+      "class": "Intermediate",
+      "streams": ["MPC", "BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Chemistry textbook (MPC & BiPC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Chemistry-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i7",
+      "board": "AP Board",
+      "title": "Intermediate Botany — I Year",
+      "subject": "Botany",
+      "class": "Intermediate",
+      "streams": ["BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Botany textbook (BiPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Botany-I.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i8",
+      "board": "AP Board",
+      "title": "Intermediate Botany — II Year",
+      "subject": "Botany",
+      "class": "Intermediate",
+      "streams": ["BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Botany textbook (BiPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Botany-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i9",
+      "board": "AP Board",
+      "title": "Intermediate Zoology — I Year",
+      "subject": "Zoology",
+      "class": "Intermediate",
+      "streams": ["BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Zoology textbook (BiPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Zoology-I.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i10",
+      "board": "AP Board",
+      "title": "Intermediate Zoology — II Year",
+      "subject": "Zoology",
+      "class": "Intermediate",
+      "streams": ["BiPC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Zoology textbook (BiPC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Zoology-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i11",
+      "board": "AP Board",
+      "title": "Intermediate Commerce — I Year",
+      "subject": "Commerce",
+      "class": "Intermediate",
+      "streams": ["CEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Commerce textbook (CEC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Commerce-I.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i12",
+      "board": "AP Board",
+      "title": "Intermediate Commerce — II Year",
+      "subject": "Commerce",
+      "class": "Intermediate",
+      "streams": ["CEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Commerce textbook (CEC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Commerce-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i13",
+      "board": "AP Board",
+      "title": "Intermediate Economics — I Year",
+      "subject": "Economics",
+      "class": "Intermediate",
+      "streams": ["CEC", "HEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Economics textbook (CEC & HEC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/ECONOMICS_-_I_YEAR.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i14",
+      "board": "AP Board",
+      "title": "Intermediate Economics — II Year (Workbook)",
+      "subject": "Economics",
+      "class": "Intermediate",
+      "streams": ["CEC", "HEC"],
+      "description": "BIEAP official Intermediate II Year Economics workbook, English medium (CEC & HEC streams) — a full II Year textbook PDF was not found published separately.",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/2ND_YEAR_ECONOMICS_(EM)_WORK_BOOK.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i15",
+      "board": "AP Board",
+      "title": "Intermediate Civics — I Year",
+      "subject": "Civics",
+      "class": "Intermediate",
+      "streams": ["CEC", "HEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year Civics textbook (CEC & HEC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/CIVICS_I_YEAR.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i16",
+      "board": "AP Board",
+      "title": "Intermediate Civics — II Year",
+      "subject": "Civics",
+      "class": "Intermediate",
+      "streams": ["CEC", "HEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year Civics textbook (CEC & HEC streams).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/Civics-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i17",
+      "board": "AP Board",
+      "title": "Intermediate History — I Year",
+      "subject": "History",
+      "class": "Intermediate",
+      "streams": ["HEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate I Year History textbook (HEC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/HISTORY_I_YEAR.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
+      "id": "tb-i18",
+      "board": "AP Board",
+      "title": "Intermediate History — II Year",
+      "subject": "History",
+      "class": "Intermediate",
+      "streams": ["HEC"],
+      "description": "BIEAP/Telugu Akademi official Intermediate II Year History textbook (HEC stream).",
+      "pdfUrl": "https://bieap.apcfss.in/Uploads/Materials/History-II.pdf",
+      "readUrl": "https://bieap.apcfss.in/",
+      "source": "BIEAP"
+    },
+    {
       "id": "tb1",
       "board": "AP Board",
       "title": "AP Board Class 10 Mathematics",
@@ -444,6 +660,246 @@
       "source": "TS SCERT"
     }
   ],
+  "previousPapers": {
+    "secondary": [
+      {
+        "id": "pp-sec-1",
+        "board": "AP Board",
+        "subject": "Mathematics",
+        "year": 2022,
+        "title": "AP SSC Mathematics — 2022",
+        "pdfUrl": "https://www.bse.ap.gov.in/PDFS/10MP22/15E%20&%2016E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-2",
+        "board": "AP Board",
+        "subject": "Mathematics",
+        "year": 2023,
+        "title": "AP SSC Mathematics — 2023",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_23/15%20E%20&%2016%20E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-3",
+        "board": "AP Board",
+        "subject": "Mathematics",
+        "year": 2024,
+        "title": "AP SSC Mathematics — 2024",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_24/15%20E%20&%2016%20E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-4",
+        "board": "AP Board",
+        "subject": "Science",
+        "year": 2022,
+        "title": "AP SSC Science — 2022",
+        "pdfUrl": "https://www.bse.ap.gov.in/PDFS/10MP22/19E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-5",
+        "board": "AP Board",
+        "subject": "Science",
+        "year": 2023,
+        "title": "AP SSC Science — 2023",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_23/19%20E%20&%2020%20E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-6",
+        "board": "AP Board",
+        "subject": "Science",
+        "year": 2024,
+        "title": "AP SSC Science — 2024",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_24/19E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-7",
+        "board": "AP Board",
+        "subject": "Social Studies",
+        "year": 2022,
+        "title": "AP SSC Social Studies — 2022",
+        "pdfUrl": "https://www.bse.ap.gov.in/PDFS/10MP22/21E%20&%2022E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-8",
+        "board": "AP Board",
+        "subject": "Social Studies",
+        "year": 2023,
+        "title": "AP SSC Social Studies — 2023",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_23/21%20E%20&%2022%20E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-9",
+        "board": "AP Board",
+        "subject": "Social Studies",
+        "year": 2024,
+        "title": "AP SSC Social Studies — 2024",
+        "pdfUrl": "https://www.bse.ap.gov.in/QP_24/21%20E%20&%2022%20E.pdf",
+        "readUrl": "https://www.bse.ap.gov.in/",
+        "source": "BSE AP (official)"
+      },
+      {
+        "id": "pp-sec-10",
+        "board": "TS Board",
+        "subject": "All Subjects",
+        "year": null,
+        "title": "TS SSC Previous Papers (all subjects)",
+        "description": "BSE Telangana does not publish individual past exam paper PDFs on its own site — this links to a subject-wise papers hub instead.",
+        "pdfUrl": "",
+        "readUrl": "https://education.sakshi.com/en/ts-10th/previous-papers",
+        "source": "Sakshi Education (papers hub)"
+      }
+    ],
+    "intermediate": [
+      {
+        "id": "pp-inter-1",
+        "board": "AP Board",
+        "stream": "MPC",
+        "year": null,
+        "title": "AP Intermediate MPC Previous Papers",
+        "description": "BIEAP (the official board) does not publish past IPE exam papers directly — only syllabus and academic plans. This links to a subject-wise papers hub instead.",
+        "pdfUrl": "",
+        "readUrl": "https://www.manabadi.co.in/65/AP%20Inter-Question-Papers",
+        "source": "Manabadi (papers hub)"
+      },
+      {
+        "id": "pp-inter-2",
+        "board": "AP Board",
+        "stream": "BiPC",
+        "year": null,
+        "title": "AP Intermediate BiPC Previous Papers",
+        "description": "BIEAP (the official board) does not publish past IPE exam papers directly — only syllabus and academic plans. This links to a subject-wise papers hub instead.",
+        "pdfUrl": "",
+        "readUrl": "https://www.manabadi.co.in/65/AP%20Inter-Question-Papers",
+        "source": "Manabadi (papers hub)"
+      },
+      {
+        "id": "pp-inter-3",
+        "board": "AP Board",
+        "stream": "CEC",
+        "year": null,
+        "title": "AP Intermediate CEC Previous Papers",
+        "description": "BIEAP (the official board) does not publish past IPE exam papers directly — only syllabus and academic plans. This links to a subject-wise papers hub instead.",
+        "pdfUrl": "",
+        "readUrl": "https://www.manabadi.co.in/65/AP%20Inter-Question-Papers",
+        "source": "Manabadi (papers hub)"
+      },
+      {
+        "id": "pp-inter-4",
+        "board": "AP Board",
+        "stream": "HEC",
+        "year": null,
+        "title": "AP Intermediate HEC Previous Papers",
+        "description": "BIEAP (the official board) does not publish past IPE exam papers directly — only syllabus and academic plans. This links to a subject-wise papers hub instead.",
+        "pdfUrl": "",
+        "readUrl": "https://www.manabadi.co.in/65/AP%20Inter-Question-Papers",
+        "source": "Manabadi (papers hub)"
+      }
+    ],
+    "competitive": [
+      {
+        "id": "pp-comp-1",
+        "exam": "JEE Main",
+        "year": 2026,
+        "title": "JEE Main 2026 — 2nd April, Shift 1 (Question Paper + Answer Key)",
+        "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf",
+        "readUrl": "https://jeemain.nta.nic.in/",
+        "source": "NTA (official)"
+      },
+      {
+        "id": "pp-comp-2",
+        "exam": "JEE Main",
+        "year": 2026,
+        "title": "JEE Main 2026 — 2nd April, Shift 2 (Question Paper + Answer Key)",
+        "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409481957146.pdf",
+        "readUrl": "https://jeemain.nta.nic.in/",
+        "source": "NTA (official)"
+      },
+      {
+        "id": "pp-comp-3",
+        "exam": "JEE Main",
+        "year": 2026,
+        "title": "JEE Main 2026 — 4th April, Shift 1 (Question Paper + Answer Key)",
+        "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604091916616339.pdf",
+        "readUrl": "https://jeemain.nta.nic.in/",
+        "source": "NTA (official)"
+      },
+      {
+        "id": "pp-comp-4",
+        "exam": "NEET",
+        "year": null,
+        "title": "NEET Previous Papers",
+        "description": "NTA does not publish full NEET question papers directly on its site (only syllabus and information bulletins). This links to the official NEET portal.",
+        "pdfUrl": "",
+        "readUrl": "https://neet.nta.nic.in/",
+        "source": "NTA (official portal)"
+      },
+      {
+        "id": "pp-comp-5",
+        "exam": "AP EAPCET",
+        "year": null,
+        "title": "AP EAPCET Previous Papers",
+        "description": "APSCHE hosts past EAPCET papers behind an authenticated exam portal (not publicly downloadable). This links to the official portal.",
+        "pdfUrl": "",
+        "readUrl": "https://cets.apsche.ap.gov.in/EAPCET/",
+        "source": "APSCHE (official portal)"
+      },
+      {
+        "id": "pp-comp-6",
+        "exam": "TS EAPCET",
+        "year": null,
+        "title": "TS EAPCET Previous Papers",
+        "description": "TGCHE hosts past EAPCET papers behind an authenticated exam portal (not publicly downloadable). This links to the official portal.",
+        "pdfUrl": "",
+        "readUrl": "https://eapcet.tgche.ac.in/TGEAPCET/EAPCET_DOWNLOAD_QUESTIONS_KEYS.aspx",
+        "source": "TGCHE (official portal)"
+      },
+      {
+        "id": "pp-comp-7",
+        "exam": "NTSE",
+        "year": null,
+        "title": "NTSE Previous Papers",
+        "description": "NTSE is state-conducted with no single official past-paper archive. This links to the DIKSHA resource hub.",
+        "pdfUrl": "",
+        "readUrl": "https://diksha.gov.in/explore?key=ntse",
+        "source": "DIKSHA"
+      },
+      {
+        "id": "pp-comp-8",
+        "exam": "Science Olympiad",
+        "year": null,
+        "title": "Science Olympiad Previous Papers",
+        "description": "SOF publishes sample papers rather than a full past-paper archive.",
+        "pdfUrl": "",
+        "readUrl": "https://sofworld.org/nso/class-10/sample-model-test-papers/nso-sample-papers-class-10",
+        "source": "SOF"
+      },
+      {
+        "id": "pp-comp-9",
+        "exam": "NMMS",
+        "year": null,
+        "title": "NMMS Previous Papers",
+        "description": "NMMS papers are released by each state SCERT — no single official archive. This links to the DIKSHA resource hub.",
+        "pdfUrl": "",
+        "readUrl": "https://diksha.gov.in/explore?key=nmms",
+        "source": "DIKSHA"
+      }
+    ]
+  },
   "competitive": [
     {
       "id": "ntse",

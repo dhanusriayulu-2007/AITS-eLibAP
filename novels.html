@@ -31,7 +31,7 @@
     <a href="index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Novels
   </p>
   <h1 style="font-size:28px;font-weight:bold;margin-bottom:6px;">Novels &amp; fiction</h1>
-  <p style="color:var(--text-mid);margin-bottom:24px;">Fiction, historical, thriller, drama, comedy — Telugu, English and Hindi. Links to Open Library and Internet Archive.</p>
+  <p style="color:var(--text-mid);margin-bottom:24px;">Fiction, nonfiction, thriller, comedy, poetry, biography — plus Telugu literature archives. Links to Project Gutenberg, Open Library and Internet Archive.</p>
 
   <!-- Search -->
   <div style="display:flex;gap:0;background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:500px;margin-bottom:24px;">
@@ -45,8 +45,12 @@
 
   <div class="filter-tabs" id="bookTabs">
     <button class="filter-tab active" data-filter="all">All</button>
-    <button class="filter-tab" data-filter="Telugu">Telugu</button>
-    <button class="filter-tab" data-filter="English">English Novels</button>
+    <button class="filter-tab" data-filter="Fiction">Fiction</button>
+    <button class="filter-tab" data-filter="Nonfiction">Nonfiction</button>
+    <button class="filter-tab" data-filter="Thriller">Thriller</button>
+    <button class="filter-tab" data-filter="Comedy">Comedy</button>
+    <button class="filter-tab" data-filter="Biography">Biography</button>
+    <button class="filter-tab" data-filter="Poetry">Poetry</button>
     <button class="filter-tab" data-filter="Archive">Archive.org</button>
   </div>
 
@@ -99,7 +103,7 @@
         <span class="card-badge badge-free">${b.source || b.language} · ${b.genre}</span>
         ${b.award ? `<span class="card-badge badge-hot" style="margin-left:4px;">${b.award}</span>` : ''}
         <h3 style="margin-top:8px;">${b.title}</h3>
-        <p style="font-weight:500;margin-bottom:6px;">${b.author} · ${b.year}</p>
+        <p style="font-weight:500;margin-bottom:6px;">${b.author}</p>
         <p>${b.description}</p>
         <div class="card-actions">
           ${b.pdfUrl ? `<a href="${b.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
@@ -110,7 +114,7 @@
 
   function filterBooks() {
     const q = document.getElementById('bookSearch').value.toLowerCase();
-    let filtered = activeFilter === 'all' ? allBooks : allBooks.filter(b => b.language === activeFilter);
+    let filtered = activeFilter === 'all' ? allBooks : allBooks.filter(b => b.genre === activeFilter);
     if (q) filtered = filtered.filter(b => b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q) || b.genre.toLowerCase().includes(q));
     renderBooks(filtered);
   }

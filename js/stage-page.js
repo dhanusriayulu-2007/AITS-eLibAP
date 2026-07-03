@@ -71,9 +71,35 @@ function renderVideos(board) {
     </div>`).join('');
 }
 
+const PAPERS_CATEGORY = { secondary: 'secondary', intermediate: 'intermediate' };
+
+function renderPreviousPapers(board) {
+  const grid = document.getElementById('papersGrid');
+  if (!grid || !eduData) return;
+  const categoryKey = PAPERS_CATEGORY[STAGE_ID];
+  if (!categoryKey) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No previous papers for this stage yet.</p>'; return; }
+
+  const boardName = board === 'ap' ? 'AP Board' : board === 'ts' ? 'TS Board' : null;
+  let papers = eduData.previousPapers[categoryKey] || [];
+  if (boardName) papers = papers.filter(p => p.board === boardName);
+  if (!papers.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No previous papers found.</p>'; return; }
+  grid.innerHTML = papers.map(p => `
+    <div class="card">
+      <span class="card-badge badge-free">${p.board || p.stream || p.exam}</span>
+      <h3>${p.title}</h3>
+      ${p.subject ? `<p style="font-weight:500;margin-bottom:6px;">${p.subject}${p.year ? ' · ' + p.year : ''}</p>` : ''}
+      ${p.description ? `<p>${p.description}</p>` : ''}
+      <div class="card-actions">
+        ${p.pdfUrl ? `<a href="${p.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
+        <a href="${p.readUrl}" target="_blank" class="btn-card-ghost">${p.pdfUrl ? 'Official Site' : 'Visit Portal'}</a>
+      </div>
+    </div>`).join('');
+}
+
 function renderEduSections(board) {
   renderDiksha(board);
   renderTextbooks(board);
+  renderPreviousPapers(board);
 }
 
 document.getElementById('boardTabs').addEventListener('click', e => {

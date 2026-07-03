@@ -52,6 +52,15 @@
     <div class="loading">Loading…</div>
   </div>
 
+  <!-- Previous Year Papers -->
+  <div class="section-header">
+    <h2>Previous Year Papers</h2>
+    <span style="font-size:13px;color:var(--text-mid);">Official where publicly available; portal links otherwise</span>
+  </div>
+  <div id="papersGrid" class="card-grid" style="margin-bottom:48px;">
+    <div class="loading">Loading papers…</div>
+  </div>
+
   <!-- Video lessons -->
   <div class="section-header">
     <h2>Video lessons</h2>
@@ -109,6 +118,21 @@
       </div>`).join('');
   }
 
+  function renderPreviousPapers(list) {
+    const grid = document.getElementById('papersGrid');
+    if (!list.length) { grid.innerHTML = '<p style="color:var(--text-mid);padding:16px;">No papers found.</p>'; return; }
+    grid.innerHTML = list.map(p => `
+      <div class="card">
+        <span class="card-badge badge-hot">${p.exam}</span>
+        <h3>${p.title}</h3>
+        ${p.description ? `<p>${p.description}</p>` : ''}
+        <div class="card-actions">
+          ${p.pdfUrl ? `<a href="${p.pdfUrl}" target="_blank" class="btn-card-primary">📄 Download PDF</a>` : ''}
+          <a href="${p.readUrl}" target="_blank" class="btn-card-ghost">${p.pdfUrl ? 'Official Site' : 'Visit Portal'}</a>
+        </div>
+      </div>`).join('');
+  }
+
   function renderVideos(filter) {
     const grid = document.getElementById('videoGrid');
     const competitive = allVideos.filter(v => v.board === 'Competitive');
@@ -134,8 +158,14 @@
 
   fetch(`${API}/educational.json`)
     .then(r => r.json())
-    .then(data => renderResources(data.competitive))
-    .catch(() => { document.getElementById('resourceGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load content. Please refresh the page.</p>'; });
+    .then(data => {
+      renderResources(data.competitive);
+      renderPreviousPapers(data.previousPapers.competitive);
+    })
+    .catch(() => {
+      document.getElementById('resourceGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load content. Please refresh the page.</p>';
+      document.getElementById('papersGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load content. Please refresh the page.</p>';
+    });
 
   fetch(`${API}/videos.json`)
     .then(r => r.json())
