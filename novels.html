@@ -11,6 +11,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
       <a href="educational.html">Educational</a>
       <a href="newspaper.html">Newspaper</a>
@@ -86,7 +87,7 @@
 </footer>
 
 <script>
-  const API = 'http://localhost:8080/api';
+  const API = 'data';
   let allBooks = [];
   let activeFilter = 'all';
 
@@ -133,10 +134,10 @@
   const params = new URLSearchParams(window.location.search);
   if (params.get('q')) document.getElementById('bookSearch').value = params.get('q');
 
-  fetch(`${API}/books`)
+  fetch(`${API}/books.json`)
     .then(r => r.json())
     .then(data => { allBooks = data; filterBooks(); })
-    .catch(() => { document.getElementById('bookGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load books.</p>'; });
+    .catch(() => { document.getElementById('bookGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load books. Please refresh the page.</p>'; });
 </script>
 <script src="js/auth.js"></script>
 </body>

@@ -11,6 +11,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
       <a href="educational.html" class="active">Educational</a>
       <a href="newspaper.html">Newspaper</a>
@@ -95,7 +96,7 @@
 </footer>
 
 <script>
-  const API = 'http://localhost:8080/api';
+  const API = 'data';
   let allVideos = [];
   let eduData = null;
 
@@ -104,7 +105,7 @@
 
   function renderStages(board) {
     const grid = document.getElementById('stagesGrid');
-    if (!eduData) { grid.innerHTML = '<p style="color:var(--text-mid)">Failed to load data. Is the server running?</p>'; return; }
+    if (!eduData) { grid.innerHTML = '<p style="color:var(--text-mid)">Failed to load data. Please refresh the page.</p>'; return; }
 
     if (board === 'competitive') {
       grid.innerHTML = eduData.competitive.map(c => `
@@ -169,7 +170,7 @@
   });
 
   // Load data
-  fetch(`${API}/educational`)
+  fetch(`${API}/educational.json`)
     .then(r => r.json())
     .then(data => {
       eduData = data;
@@ -180,13 +181,13 @@
       renderStages(initBoard);
     })
     .catch(() => {
-      document.getElementById('stagesGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>';
+      document.getElementById('stagesGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load content. Please refresh the page.</p>';
     });
 
-  fetch(`${API}/videos`)
+  fetch(`${API}/videos.json`)
     .then(r => r.json())
     .then(data => { allVideos = data; renderVideos('all'); })
-    .catch(() => { document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load videos.</p>'; });
+    .catch(() => { document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load videos. Please refresh the page.</p>'; });
 </script>
 <script src="js/auth.js"></script>
 </body>

@@ -1,7 +1,7 @@
 /* Shared renderer for kindergarten.html / primary.html / secondary.html / intermediate.html
    Each page sets window.STAGE_ID and window.STAGE_CLASSES before loading this script. */
 
-const API = 'http://localhost:8080/api';
+const API = 'data';
 let eduData = null;
 let allVideos = [];
 
@@ -84,7 +84,7 @@ document.getElementById('boardTabs').addEventListener('click', e => {
   renderVideos(e.target.dataset.board);
 });
 
-fetch(`${API}/educational`)
+fetch(`${API}/educational.json`)
   .then(r => r.json())
   .then(data => {
     eduData = data;
@@ -93,11 +93,11 @@ fetch(`${API}/educational`)
   })
   .catch(() => {
     ['dikshaGrid', 'textbooksGrid'].forEach(id => {
-      document.getElementById(id).innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server (port 8080) to load content.</p>';
+      document.getElementById(id).innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load content. Please refresh the page.</p>';
     });
   });
 
-fetch(`${API}/videos`)
+fetch(`${API}/videos.json`)
   .then(r => r.json())
   .then(data => { allVideos = data; renderVideos(initBoard); })
-  .catch(() => { document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load videos.</p>'; });
+  .catch(() => { document.getElementById('videoGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load videos. Please refresh the page.</p>'; });

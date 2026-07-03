@@ -11,6 +11,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
       <a href="educational.html">Educational</a>
       <a href="newspaper.html" class="active">Newspaper</a>
@@ -122,7 +123,7 @@
 </footer>
 
 <script>
-  const API = 'http://localhost:8080/api';
+  const API = 'data';
   let allNews = [];
 
   function renderNews(filter) {
@@ -157,10 +158,10 @@
     renderNews(e.target.dataset.filter);
   });
 
-  fetch(`${API}/newspapers`)
+  fetch(`${API}/newspapers.json`)
     .then(r => r.json())
     .then(data => { allNews = data; renderNews('all'); })
-    .catch(() => { document.getElementById('newsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load newspapers.</p>'; });
+    .catch(() => { document.getElementById('newsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load newspapers. Please refresh the page.</p>'; });
 </script>
 <script src="js/auth.js"></script>
 </body>

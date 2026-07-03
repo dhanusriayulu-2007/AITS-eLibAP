@@ -11,6 +11,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
       <a href="educational.html">Educational</a>
       <a href="newspaper.html">Newspaper</a>
@@ -39,20 +40,15 @@
   <div class="card-grid" style="margin-bottom:48px;">
     <div class="card">
       <span class="card-badge badge-hot">COMMON ISSUE</span>
-      <h3>Pages say "Start the Java server"</h3>
-      <p>eLibAP's videos, textbooks, newspapers, books and events are all served by a small Java API on port 8080. If a page shows this message, the server isn't running yet.</p>
-      <p style="margin-top:6px;">From the project folder, run: <code>bash server/run.sh</code> (or compile/run <code>Main.java</code> directly), then reload the page.</p>
+      <h3>A page says "Failed to load content"</h3>
+      <p>eLibAP's videos, textbooks, newspapers, books and events are all read from JSON files in the <code>data/</code> folder. This message means that fetch failed — usually a slow connection or the page was opened before the file finished loading.</p>
+      <p style="margin-top:6px;">Refresh the page. If it persists, check the browser console for the failed request.</p>
     </div>
     <div class="card">
       <span class="card-badge badge-hot">COMMON ISSUE</span>
-      <h3>CORS error in the browser console</h3>
-      <p>This happens when you open an HTML file directly (<code>file://</code>) instead of through a web server.</p>
-      <p style="margin-top:6px;">Serve the site with <code>python3 -m http.server 3000</code> from the project folder and open <code>http://localhost:3000</code> instead.</p>
-    </div>
-    <div class="card">
-      <span class="card-badge badge-hot">COMMON ISSUE</span>
-      <h3>Port 8080 already in use</h3>
-      <p>Another process is already listening on that port. Either stop it, or change the port number in <code>server/Main.java</code> and update the <code>API</code> constant at the top of each page's script.</p>
+      <h3>Opening the HTML file directly doesn't load data</h3>
+      <p>Opening a page via <code>file://</code> can block JSON fetches in some browsers.</p>
+      <p style="margin-top:6px;">Serve the site with any static server, e.g. <code>python3 -m http.server 3000</code> from the project folder, and open <code>http://localhost:3000</code> instead — or just visit the live deployed site.</p>
     </div>
     <div class="card">
       <span class="card-badge badge-hot">COMMON ISSUE</span>

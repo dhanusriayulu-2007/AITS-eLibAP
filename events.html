@@ -11,6 +11,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="css/logo.svg" alt="eLibAP" style="height:44px;width:auto;display:block;"></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
       <a href="educational.html">Educational</a>
       <a href="newspaper.html">Newspaper</a>
@@ -88,7 +89,7 @@
 </footer>
 
 <script>
-  const API = 'http://localhost:8080/api';
+  const API = 'data';
   let allEvents = [];
 
   const badgeMap = { WORKSHOP: 'badge-workshop', 'BOOK CLUB': 'badge-bookclub', PODCAST: 'badge-podcast', NOTICE: 'badge-notice' };
@@ -116,10 +117,10 @@
     renderEvents(e.target.dataset.filter);
   });
 
-  fetch(`${API}/events`)
+  fetch(`${API}/events.json`)
     .then(r => r.json())
     .then(data => { allEvents = data; renderEvents('all'); })
-    .catch(() => { document.getElementById('eventsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Start the Java server to load events.</p>'; });
+    .catch(() => { document.getElementById('eventsGrid').innerHTML = '<p style="color:var(--text-mid);padding:16px;">Failed to load events. Please refresh the page.</p>'; });
 </script>
 <script src="js/auth.js"></script>
 </body>

@@ -200,6 +200,11 @@ function renderNav() {
   }
 }
 
+/* ---------- Mobile nav ---------- */
+function toggleMobileNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
 /* ---------- Init ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   injectModal();

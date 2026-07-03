@@ -11,34 +11,29 @@ A free digital library portal for students and communities in Andhra Pradesh and
 ```
 Browser (HTML + CSS + JS)
         │
-        │  fetch("http://localhost:8080/api/...")
+        │  fetch("data/videos.json"), fetch("data/educational.json"), ...
         ▼
-Core Java HTTP Server  ──────────────────────────────────
-  Main.java                 com.sun.net.httpserver.HttpServer
-  JsonFileHandler.java      reads JSON files, returns with CORS headers
-        │
-        │  reads from disk
-        ▼
-data/  (JSON files — no database)
+data/  (static JSON files — no database, no backend)
   videos.json        YouTube video IDs (curated lessons)
   newspapers.json    e-paper links (Eenadu, Sakshi, etc.)
   books.json         Open Library / Archive.org links
   events.json        Upcoming workshops and events
-  educational.json   DIKSHA board/stage metadata
+  educational.json   Board/stage metadata, textbooks, competitive exam resources
 
 External Platforms (content lives here, we just link/embed)
   ├── YouTube                 Video lessons (Telugu/English)
-  ├── DIKSHA (diksha.gov.in)  AP/TS Board textbooks — official govt API
+  ├── DIKSHA (diksha.gov.in)  AP/TS Board resources
   ├── Open Library            Novels and books (openlibrary.org)
   ├── Internet Archive        Press archives, old books (archive.org)
   └── Newspaper e-papers      Eenadu, Sakshi, Deccan Chronicle, etc.
 ```
 
 ### Why this design?
-- **No database** — all content metadata lives in JSON files. Easy to edit.
-- **No framework** — core Java only. JDK's built-in `HttpServer` handles HTTP.
-- **No hosting cost** — content is served by YouTube, DIKSHA, and Archive.org. We only serve JSON.
-- **Easy to extend** — add a new resource by editing a JSON file.
+- **No database, no backend** — the site is 100% static HTML/CSS/JS + JSON. Every page's script does `fetch('data/whatever.json')` directly, same-origin, no server or API layer in between.
+- **No hosting cost** — deployable to Netlify, GitHub Pages, or any static host for free. Content itself is served by YouTube, DIKSHA, and government portals; we only serve JSON.
+- **Easy to extend** — add a new resource by editing a JSON file. No server restart, no build step.
+
+> **Legacy note:** `server/` contains a small Java HTTP server (`Main.java`) from an earlier version of this project, when pages fetched `http://localhost:8080/api/...` instead of the JSON files directly. It's no longer required to run or deploy the site and is kept only in case a future feature needs real backend logic (the JSON files have no computed data today, so it was pure overhead).
 
 ---
 
@@ -75,54 +70,44 @@ AITS-community-project/
 
 | Tool | Version | Check |
 |------|---------|-------|
-| Java JDK | 11 or higher | `java -version` |
 | Any web browser | Chrome / Firefox / Safari | — |
 
-No Maven, no Gradle, no npm, no frameworks needed.
+No Java, no Maven, no Gradle, no npm, no frameworks, no build step needed.
 
 ---
 
 ## How to Run
 
-### Step 1 — Start the Java server
+Serve the project root with any static file server, then open `index.html`.
 
-Open a terminal and run from the project root:
-
+**Option A — Python (simplest):**
 ```bash
-bash server/run.sh
-```
-
-You should see:
-```
-=== eLibAP Java Server ===
-Compiling...
-Starting server on http://localhost:8080
-API endpoints:
-  http://localhost:8080/api/videos
-  http://localhost:8080/api/newspapers
-  http://localhost:8080/api/books
-  http://localhost:8080/api/events
-  http://localhost:8080/api/educational
-```
-
-Leave this terminal open. The server runs until you press `Ctrl+C`.
-
-### Step 2 — Open the website
-
-Open `index.html` in your browser. You can do this by:
-
-**Option A — File open (simplest):**
-Double-click `index.html` in Finder, or drag it into your browser.
-
-**Option B — Local HTTP server (recommended, avoids CORS on some browsers):**
-```bash
-# Python 3
 python3 -m http.server 3000
 # then open http://localhost:3000
 ```
 
-**Option C — VS Code Live Server:**
+**Option B — VS Code Live Server:**
 Right-click `index.html` → "Open with Live Server"
+
+**Option C — File open:**
+Double-click `index.html`. Works in most browsers since data is fetched via relative paths, but some browsers restrict `fetch()` over `file://` — if content doesn't load, use Option A or B instead.
+
+---
+
+## Deploying to Netlify
+
+Since the site is fully static, Netlify needs no build command — just point it at the repo root.
+
+1. Push this repo to GitHub (already set up if you're reading this from the repo).
+2. Go to [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project**.
+3. Connect your GitHub account and select this repository.
+4. Build settings:
+   - **Build command:** leave blank
+   - **Publish directory:** `.` (the repo root)
+5. Click **Deploy site**. Netlify picks up `netlify.toml` automatically (sets the publish directory and a short cache header for the JSON data files).
+6. Every push to the connected branch auto-redeploys.
+
+No environment variables, no server process, and no `server/` folder involved — Netlify is just serving the HTML/CSS/JS/JSON files as-is.
 
 ---
 
@@ -138,22 +123,22 @@ Right-click `index.html` → "Open with Live Server"
 
 ---
 
-## API Endpoints
+## Data Files
 
-All endpoints return JSON with CORS headers (works from any origin).
+Each page fetches its data directly from these static JSON files (relative path, no server):
 
-| Endpoint | Data file | Returns |
-|----------|-----------|---------|
-| `GET /api/videos` | `data/videos.json` | Array of video objects |
-| `GET /api/newspapers` | `data/newspapers.json` | Array of newspaper objects |
-| `GET /api/books` | `data/books.json` | Array of book objects |
-| `GET /api/events` | `data/events.json` | Array of event objects |
-| `GET /api/educational` | `data/educational.json` | Object with boards + competitive |
+| File | Fetched by | Returns |
+|------|-----------|---------|
+| `data/videos.json` | Homepage, Educational, all stage pages | Array of video objects |
+| `data/newspapers.json` | Newspaper page | Array of newspaper objects |
+| `data/books.json` | Novels page | Array of book objects |
+| `data/events.json` | Homepage, Events page | Array of event objects |
+| `data/educational.json` | Educational, all stage pages | Object with `boards`, `textbooks`, `competitive` |
 
-Test any endpoint in your browser or terminal:
+Test any file directly in your browser or terminal:
 ```bash
-curl http://localhost:8080/api/videos
-curl http://localhost:8080/api/events
+curl http://localhost:3000/data/videos.json
+curl http://localhost:3000/data/events.json
 ```
 
 ---
@@ -210,7 +195,7 @@ Edit `data/events.json`:
 }
 ```
 
-No server restart needed for data changes — the server reads the file fresh on every request.
+No restart needed for data changes locally — just refresh the page. On Netlify, push the change and it redeploys automatically.
 
 ---
 
@@ -243,17 +228,10 @@ The UI uses a teal-based color palette defined in `css/styles.css` as CSS variab
 
 ## Troubleshooting
 
-**Videos/events not loading (shows "Start the Java server")**
-→ Run `bash server/run.sh` in a terminal and keep it open.
-
-**`java: command not found`**
-→ Install JDK: `brew install openjdk` (Mac) or download from adoptium.net.
-
-**Port 8080 already in use**
-→ Change `8080` in `Main.java` line 10, recompile, and update the `API` constant in each HTML file.
-
-**CORS error in browser console when opening HTML directly**
-→ Use `python3 -m http.server 3000` to serve the files and open `http://localhost:3000`.
+**Videos/events/textbooks show "Failed to load..."**
+→ Usually means the page was opened via `file://`. Serve it with `python3 -m http.server 3000` (or deploy to Netlify) and reload.
 
 **YouTube videos not loading**
 → Check internet connection. YouTube embeds require internet access.
+
+See [help.html](help.html) for more, once the site is running.
